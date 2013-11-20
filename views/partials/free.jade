@@ -1,11 +1,14 @@
-div.free-intro(ng-class="{'ng-hide': hidden}")
-| Student-travelers should be able to talk with those they meet.
-| If you are a student, we'll ship free language guide of your choosing.
-| All you have to do is create a fictional story (humor us, write at least ~30 words)
-| that might occur if you talk to people you meet during your travels.
+div.free-intro(ng-show="showDetails")
+| We love the idea of students talking to those they meet.
+| Therefore, we're making it easy for students to get a free
+| language guide. All you have to do is create a fictional story
+| (humor us, write at least ~30 words) that might occur if you
+| talk to people you meet during your travels.
+
+p {{this}}
 
 form.story-form
-textarea.story-box(ng-click="cleanSlate()", placeholder="It had been 30 days since I left...")
+textarea.story-box(ng-click="showDetails = !showDetails", placeholder="It had rained for 6 straight days.")
 
 div.authorsDetails
 	input(name='name', placeholder="Your Name")

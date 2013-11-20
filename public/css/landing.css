@@ -2,15 +2,22 @@
 
 .title {
   font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 28px;
+  line-height: 28px;
 }
 
 .hero-container,
 .hero {
-  min-height: 440px;
+  min-height: 480px;
 }
 
 .hero-container {
-  padding-top: 70px;
+  padding-top: 110px;
   position: relative;
 }
 
@@ -30,4 +37,28 @@
 
 .guide-image {
   border-radius: 50%;
+}
+
+.feature-box {
+  padding: 50px 6%;
+}
+
+.float-right {
+  float: right;
+  text-align: right;
+}
+
+.feature-box h2 {
+  font-size: 32px;
+}
+
+.feature-box div {
+  color: #777;
+  display: inline-block;
+  font-size: 18px;
+  width: 50%;
+}
+
+.feature-box img {
+  width: 50%;
 }

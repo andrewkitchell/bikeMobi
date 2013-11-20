@@ -7,8 +7,9 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
+  'ui.event',
 ]).
-config(function ($routeProvider, $locationProvider) {
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.
     when('/', {
       templateUrl: 'partials/landing',
@@ -31,7 +32,15 @@ config(function ($routeProvider, $locationProvider) {
       controller: 'FreeCtrl'
     }).
     when('/store', {
-      templateUrl: 'store',
+      templateUrl: 'partials/store',
+      controller: 'StoreCtrl'
+    }).
+    when('/store/:guide', {
+      templateUrl: 'partials/guide',
+      controller: 'StoreCtrl'
+    }).
+    when('/cart', {
+      templateUrl: 'partials/shoppingCart',
       controller: 'StoreCtrl'
     }).
     otherwise({
@@ -39,4 +48,5 @@ config(function ($routeProvider, $locationProvider) {
     });
 
   $locationProvider.html5Mode(true);
-});
+}]);
+

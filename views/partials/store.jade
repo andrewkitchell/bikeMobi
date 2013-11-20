@@ -1,10 +1,23 @@
-div.main(ng-controller="StoreCtrl")
+div.main
+  div.well
+
+    {{ cart }}
+
+    a(href="default.htm#/cart", title="go to shopping cart", ng-disabled="cart.getTotalCount() < 1")
+      i.icon-shopping-cart
+        p {{cart.getTotalCount()}} items, {{cart.getTotalPrice() | currency}}
+
   select.language-select(ng-model="searchparam")
     option(value="", selected) Choose Language
     option(ng-repeat="guide in guides", value="{{guide.language}}") {{guide.language}}
 
+  div(ng-repeat="product in store.products | orderBy:'name' | filter:search")
+    {{ product.name }}
+    div(ng-click="cart.addItem('{{product.sku}}', '{{product.name}}', {{product.price}}, 1)")
+      | add to cart
+
   div.all-guides
-    a.guide-box(href='store/{{guide.language}}', ng-repeat='guide in guides | filter: searchparam', ng-click="guideChoice()")
+    a.guide-box(href='store/{{guide.language}}', ng-repeat='guide in guides | filter: searchparam')
       div.cover-box
         img.guide-cover(ng-src='{{guide.image}}')
         addtocart
@@ -12,8 +25,6 @@ div.main(ng-controller="StoreCtrl")
       div.guide-text
         p.guide-title {{guide.language}}
         div.guide-description {{guide.description}}
-
-  form(stripeForm)
 
     form(action="/purchase", method="post")
       script(src="https://checkout.stripe.com/v3/checkout.js",

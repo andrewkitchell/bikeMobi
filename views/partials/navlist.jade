@@ -1,16 +1,17 @@
 nav.nav-list
-  a(href='/landing')
+  a(href='/')
    img.logo
 
   ul
     li
-     a(href='about') About
+     a(href='demo', ng-class="{active:isActive('/demo')}") Design
     li
      a(href='162.243.150.16') Blog
     li
-     a(href='demo') Design
+     a(href='http://162.243.150.16/', ng-class="{active:isActive('/blog')}") Blog
     li
-     a(href='free') Free
+     a(href='free', ng-class="{active:isActive('/free')}") Earn a Guide
     li
-     a(href='store') Store
-  a.store-link Store
+     a(href='store', ng-class="{active:isActive('/store')}", ng-click="reloadCtrl()") Store
+
+  a.store-link(href='store', ng-click="reloadCtrl()") Store
