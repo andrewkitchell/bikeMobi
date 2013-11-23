@@ -1,7 +1,3 @@
-'use strict';
-
-/* Directives */
-
 angular.module('myApp.directives', []).
   directive('appVersion', function (version) {
     return function(scope, elm, attrs) {
@@ -21,10 +17,13 @@ angular.module('myApp.directives', []).
     };
   }).
   directive('addtocart', function () {
-    return {
-      restrict: 'E',
-      templateUrl: "/partials/add_to_cart.jade",
-      transclude: true
+    return function(scope, element, attrs) {
+      element.bind("click", function () {
+        scope.$apply(attrs.click);
+      });
+      // restrict: 'E',
+      // templateUrl: "/partials/add_to_cart.jade",
+      // transclude: true,
     };
   }).
   directive('stripeForm', ['$window',

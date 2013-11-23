@@ -35,14 +35,6 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
       templateUrl: 'partials/store',
       controller: 'StoreCtrl'
     }).
-    when('/store/:guide', {
-      templateUrl: 'partials/guide',
-      controller: 'StoreCtrl'
-    }).
-    when('/cart', {
-      templateUrl: 'partials/shoppingCart',
-      controller: 'StoreCtrl'
-    }).
     otherwise({
       redirectTo: '/'
     });

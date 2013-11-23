@@ -45,10 +45,6 @@ angular.module('myApp.controllers', []).
 
     $scope.this = 3;
 
-    $scope.cleanSlate = function() {
-      alert('cleanSlate');
-    };
-
     $scope.storyHide = function($event) {
       alert('story hide');
     };
@@ -59,52 +55,51 @@ angular.module('myApp.controllers', []).
 
   }).
 
-  controller('StoreCtrl', function($scope, $routeParams, DataService) {
 
-    // get store and cart from service
-    $scope.store = DataService.store;
-    $scope.cart = DataService.cart;
+  controller('StoreCtrl', ['$scope', '$http', function($scope, $http) {
 
-    // console.log($scope.store);
-    console.log($scope.cart)
-    // use routing to pick the selected product
-    if ($routeParams.productSku !== null) {
-        $scope.product = $scope.store.getProduct($routeParams.productSku);
+    $http({
+      method: 'GET',
+      url: '/api/guides'
+    }).
+
+    success(function (data, status, headers, config) {
+      $scope.guides = data.guides;
+    }).
+
+    error(function (data, status, headers, config) {
+      $scope.name = 'Error!';
+    });
+
+    $scope.addToCart = function(language) {
+      alert(language)
+      $scope.items.push(language);
     }
 
-  }).
+    $scope.removeFromCart = function(language) {
+      alert(language)
+      $scope.items.pop(language);
+    }
 
+    // $scope.addToCart = function($event) {
+    //   // alert('yeasdfasdf');
+    //   var language = $scope.guide
+    //   alert(language);
+    //    //it's up to you how you want to structure the new_object.
+    //   $scope.items.push(language);
+    // };
 
-  // .controller('CartController', function($scope) {
+    $scope.items = [];
 
-  //   $scope.cart_total = 0;
+  }]).
 
-  //   $scope.addToCart = function(id, price, qty){
-  //      //TBD: Check stock level on PHP side
-  //      console.log('qty');
-  //      var params = {'product_id': id, 'qty': qty, 'price': price};
-  //      cartFactory.addItemToCart(params, (function(results) {
-  //        //TBD : update the cartController view, how??
-  //        if (results.success) {
-  //          console.log('update cart');
-  //        }
-  //     }));
-  //   };
-
-  //   $scope.clearItems = function() {
-  //     //$scope.items = [];
-  //   }
-  // });
 
   controller('GuideDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-      // $http.get('store/' + $routeParams.guide + '.json').success(function(data) {
-      //   $scope.guide = data;
-      // });
+
     $http({
       method: 'GET',
       url: '/api/guides'+ $routeParams.guide
     }).
-
 
     success(function (data, status, headers, config) {
       $scope.guide = data.guides;
