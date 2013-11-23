@@ -72,24 +72,21 @@ angular.module('myApp.controllers', []).
     });
 
     $scope.addToCart = function(language) {
-      alert(language)
       $scope.items.push(language);
+      alert($scope.items.length);
+      $scope.updateCart();
     }
 
     $scope.removeFromCart = function(language) {
-      alert(language)
       $scope.items.pop(language);
+      $scope.updateCart();
     }
 
-    // $scope.addToCart = function($event) {
-    //   // alert('yeasdfasdf');
-    //   var language = $scope.guide
-    //   alert(language);
-    //    //it's up to you how you want to structure the new_object.
-    //   $scope.items.push(language);
-    // };
-
     $scope.items = [];
+
+    $scope.updateCart = function() {
+      $scope.totalCost = $scope.items.length * 1095;
+    };
 
   }]).
 

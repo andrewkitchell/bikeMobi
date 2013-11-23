@@ -1,22 +1,56 @@
 div.main
   div.well
 
-  div(ng-repeat='item in items')
-    img(src='{{item.image}}', width='40px', ng-click="removeFromCart(guide)")
+  div.shopping-cart
+    img.guide-in-cart(ng-repeat='item in items', src='{{item.image}}', width='80px', ng-click="removeFromCart(guide)")
+    div total: {{totalCost}}
+
+  //- THIS IS A TEST !  http://jsfiddle.net/slav123/75m7e/3/
+
+  div
+    table.table
+      tr
+        th Description
+        th Qty
+        th Cost
+        th Total
+        th
+
+      tr(ng:repeat="item in items")
+        td
+          input(type="text", ng:model="item.language")
+        td
+          input(type="number", ng:model="item.qty", ng:required)
+        td
+          input(type="number", ng:model="item.cost", ng:required)
+        td {{item.qty * item.cost | currency}}
+  //-       <td>
+  //-           [<a href ng:click="removeItem($index)">X</a>]
+  //-       </td>
+  //-     </tr>
+  //-     <tr>
+  //-       <td><a href ng:click="addItem()" class="btn btn-small">add item</a></td>
+  //-       <td></td>
+  //-       <td>Total:</td>
+  //-       <td>{{total() | currency}}</td>
+  //-     </tr>
+  //-   </table>
+  //- </div>
 
   div.shopping-cart
     form(action="/purchase", method="post")
     script(src="https://checkout.stripe.com/v3/checkout.js",
     class="stripe-button",
+    data-description="{{items.length}} language guides",
     data-image="/images/guide-corner-squared.jpg"
     data-key="pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9",
-    data-quantity=''
-    data-price='995',
+    data-quantity='{{items.length}}'
+    data-price='900',
     data-shipping='200',
-    data-shipping-address='',
     data-purchased_guides='Some Guides',
-    data-name="30 WORDS")
-    input(type="hidden", name="amount", value='995')
+    data-name="30 WORDS",
+    data-amount="{{totalCost}}")
+    input(type="hidden", name="amount", value='')
     input(type="hidden", name="purchased_guides", value='Some Guides')
 
   select.language-select(ng-model="searchparam")

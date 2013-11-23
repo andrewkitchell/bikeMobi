@@ -6,6 +6,19 @@
 	margin-top: 100px;
 }
 
+.shopping-cart {
+	height: 100px;
+	padding: 6px;
+	width: 100%;
+}
+
+.guide-in-cart {
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .all-guides {
 	margin: 0 0 0 6%;
 	width: 88%;
