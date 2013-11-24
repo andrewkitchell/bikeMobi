@@ -1,14 +1,15 @@
+
 nav.nav-list
-  a(href='/')
-   img.logo
+  a.logo-box(href='/')
+    img.logo(src="/images/logo_30words_2.png")
 
   ul
     li
      a(href='demo', ng-class="{active:isActive('/demo')}") Design
     li
-     a(href='162.243.150.16') Blog
+     a(href='about', ng-class="{active:isActive('/about')}") About
     li
-     a(href='http://162.243.150.16/', ng-class="{active:isActive('/blog')}") Blog
+     a(href='', ng-class="{active:isActive('/blog')}") Blog
     li
      a(href='free', ng-class="{active:isActive('/free')}") Earn a Guide
     li

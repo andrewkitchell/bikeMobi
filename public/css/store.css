@@ -1,5 +1,10 @@
 /* app css stylesheet */
 
+.title {
+	color: red;
+}
+
+
 .language-select {
 	display: block;
 	margin-left: 6%;
@@ -7,16 +12,33 @@
 }
 
 .shopping-cart {
-	height: 100px;
-	padding: 6px;
-	width: 100%;
+	background: white;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+	height: 100%;
+	padding: 2%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 20%;
+	z-index: 111110;
+}
+
+.language-in-cart {
+	display: block;
+	margin: 10px auto;
+	text-align: center;
 }
 
 .guide-in-cart {
-	display: inline-block;
-	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	display: block;
+	margin-bottom: 4px;
+}
+
+.guide-quantity {
+	display: block;
+	width: 50px;
+	text-align: center;
 }
 
 .all-guides {

@@ -1,9 +1,11 @@
-'use strict';
-
 /* Controllers */
 
+
 angular.module('myApp.controllers', []).
-  controller('AppCtrl', function($scope, $http, $route, $rootScope, $location) {
+
+  controller('AppCtrl', function($scope, $http, $route, $rootScope, $location, cssInjector) {
+
+    cssInjector.setSinglePageMode(true);
 
     $http({
       method: 'GET',
@@ -31,8 +33,10 @@ angular.module('myApp.controllers', []).
 
   }).
 
-  controller('LandingCtrl', function($scope) {
+  controller('LandingCtrl', function($scope, cssInjector) {
     $scope.name = 'Landing';
+
+    cssInjector.setSinglePageMode(true);
 
     $scope.demoGuide = function() {
       alert('heyo');
@@ -40,7 +44,11 @@ angular.module('myApp.controllers', []).
 
   }).
 
-  controller('FreeCtrl', function($scope, $locale) {
+  controller('FreeCtrl', function($scope, $locale, cssInjector) {
+
+    cssInjector.setSinglePageMode(true);
+    cssInjector.add("/css/free.css");
+
     $scope.name = 'Free';
 
     $scope.this = 3;
@@ -56,7 +64,11 @@ angular.module('myApp.controllers', []).
   }).
 
 
-  controller('StoreCtrl', ['$scope', '$http', function($scope, $http) {
+  controller('StoreCtrl', ['$scope', '$http', 'cssInjector', function($scope, $http, cssInjector) {
+
+    // this is a service attached from github /// https://github.com/Yappli/angular-css-injector
+    cssInjector.add("/css/store.css");
+    cssInjector.setSinglePageMode(true);
 
     $http({
       method: 'GET',
@@ -73,7 +85,6 @@ angular.module('myApp.controllers', []).
 
     $scope.addToCart = function(language) {
       $scope.items.push(language);
-      alert($scope.items.length);
       $scope.updateCart();
     }
 
@@ -83,6 +94,8 @@ angular.module('myApp.controllers', []).
     }
 
     $scope.items = [];
+
+    $scope.totalCost = '900';
 
     $scope.updateCart = function() {
       $scope.totalCost = $scope.items.length * 1095;

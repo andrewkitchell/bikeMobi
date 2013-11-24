@@ -1,5 +1,3 @@
-'use strict';
-
 // Declare app level module which depends on filters, and services
 
 angular.module('myApp', [
@@ -8,7 +6,9 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'ui.event',
+  'angular.css.injector'
 ]).
+
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.
     when('/', {
@@ -33,7 +33,7 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     }).
     when('/store', {
       templateUrl: 'partials/store',
-      controller: 'StoreCtrl'
+      controller: 'StoreCtrl',
     }).
     otherwise({
       redirectTo: '/'
