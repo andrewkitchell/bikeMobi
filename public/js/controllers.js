@@ -5,7 +5,7 @@ angular.module('myApp.controllers', []).
 
   controller('AppCtrl', function($scope, $http, $route, $rootScope, $location, cssInjector) {
 
-    cssInjector.setSinglePageMode(true);
+    // cssInjector.setSinglePageMode(true);
 
     $http({
       method: 'GET',
@@ -36,7 +36,7 @@ angular.module('myApp.controllers', []).
   controller('LandingCtrl', function($scope, cssInjector) {
     $scope.name = 'Landing';
 
-    cssInjector.setSinglePageMode(true);
+    // cssInjector.setSinglePageMode(true);
 
     $scope.demoGuide = function() {
       alert('heyo');
@@ -67,8 +67,6 @@ angular.module('myApp.controllers', []).
   controller('StoreCtrl', ['$scope', '$http', 'cssInjector', function($scope, $http, cssInjector) {
 
     // this is a service attached from github /// https://github.com/Yappli/angular-css-injector
-    cssInjector.add("/css/store.css");
-    cssInjector.setSinglePageMode(true);
 
     $http({
       method: 'GET',
@@ -83,15 +81,38 @@ angular.module('myApp.controllers', []).
       $scope.name = 'Error!';
     });
 
+  }]).
+
+
+  controller('GuideCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+
+    $http({
+      method: 'GET',
+      url: '/api/guides/'
+    }).
+
+    success(function (data, status, headers, config) {
+      $scope.guide = data.guides[$routeParams.guide];
+    }).
+
+    error(function (data, status, headers, config) {
+      $scope.name = 'Error!';
+    });
+
+  }]).
+
+
+  controller('ShoppingCartCtrl', ['$scope', '$http', function($scope, $http) {
+
     $scope.addToCart = function(language) {
       $scope.items.push(language);
       $scope.updateCart();
-    }
+    };
 
-    $scope.removeFromCart = function(language) {
-      $scope.items.pop(language);
+    $scope.removeFromCart = function(index) {
+      $scope.items.splice(index, 1);
       $scope.updateCart();
-    }
+    };
 
     $scope.items = [];
 
@@ -100,26 +121,8 @@ angular.module('myApp.controllers', []).
     $scope.updateCart = function() {
       $scope.totalCost = $scope.items.length * 1095;
     };
-
   }]).
 
-
-  controller('GuideDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-
-    $http({
-      method: 'GET',
-      url: '/api/guides'+ $routeParams.guide
-    }).
-
-    success(function (data, status, headers, config) {
-      $scope.guide = data.guides;
-    }).
-
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
-
-  }]).
 
   controller('AboutCtrl', function ($scope) {
     $scope.name = 'About';

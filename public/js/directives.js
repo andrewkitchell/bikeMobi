@@ -21,9 +21,6 @@ angular.module('myApp.directives', []).
       element.bind("click", function () {
         scope.$apply(attrs.click);
       });
-      // restrict: 'E',
-      // templateUrl: "/partials/add_to_cart.jade",
-      // transclude: true,
     };
   }).
   directive('stripeForm', ['$window',

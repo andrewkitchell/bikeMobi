@@ -13,6 +13,6 @@ nav.nav-list
     li
      a(href='free', ng-class="{active:isActive('/free')}") Earn a Guide
     li
-     a(href='store', ng-class="{active:isActive('/store')}", ng-click="reloadCtrl()") Store
+     a(href='store', ng-class="{active:isActive('/store')}") Store
 
-  a.store-link(href='store', ng-click="reloadCtrl()") Store
+  a.store-link(href='store', ng-class="{ng-hide:isActive('/store')}") Store

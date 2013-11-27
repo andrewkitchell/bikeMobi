@@ -1,71 +1,48 @@
-div.main
+div.main(ng-controller="ShoppingCartCtrl")
+
+  div(ng-init="isHidden=false")
+    button(ng-click="isHidden=!isHidden") Show / Hide Element
+    div.my-show-hide-animation(ng-hide="isHidden") I am visible!
+
+
   div.shopping-cart(ng-show="items.length")
-    div.language-in-cart
-      div(ng-repeat='item in items')
-        i.fa-times-circle-o(ng-click="removeFromCart(guide)")
-        img.guide-in-cart(src='{{item.image}}', width='80px')
-        td
-          input.guide-quantity(type="number", ng:model="item.qty", ng:required, placeholder='1')
 
-    div total: {{totalCost}}
+    div.total
+      img.total-logo(src="/images/logo_30words_store.png")
+      p Your Total:
+      p {{totalCost | currency:"$" }}
+      div
+        form(action="/purchase", method="post")
+        script(src="https://checkout.stripe.com/v3/checkout.js",
+        class="stripe-button",
+        data-description="{{items.length}} language guides",
+        data-image="/images/guide-corner-squared.jpg"
+        data-key="pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9",
+        data-quantity='{{items.length}}'
+        data-purchased_guides='Some Guides',
+        data-name="30 WORDS",
+        data-amount="{{totalCost}}")
+        input(type="hidden", name="amount", value="{{totalCost}}")
+        input(type="hidden", name="purchased_guides", value='Some Guides')
 
-    div
-      form(action="/purchase", method="post")
-      script(src="https://checkout.stripe.com/v3/checkout.js",
-      class="stripe-button",
-      data-description="{{items.length}} language guides",
-      data-image="/images/guide-corner-squared.jpg"
-      data-key="pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9",
-      data-quantity='{{items.length}}'
-      data-purchased_guides='Some Guides',
-      data-name="30 WORDS",
-      data-amount="{{totalCost}}")
-      input(type="hidden", name="amount", value="{{totalCost}}")
-      input(type="hidden", name="purchased_guides", value='Some Guides')
-
-  div.well
-
-  //- THIS IS A TEST !  http://jsfiddle.net/slav123/75m7e/3/
-
-  //- div
-  //-   table.table
-  //-     tr
-  //-       th Description
-  //-       th Qty
-  //-       th Cost
-  //-       th Total
-  //-       th
-
-  //-     tr(ng:repeat="item in items")
-  //-       td
-  //-         input(type="text", ng:model="item.language")
-  //-       td
-  //-         input(type="number", ng:model="item.cost", ng:required)
-  //-       td {{item.qty * item.cost | currency}}
-  //-       <td>
-  //-           [<a href ng:click="removeItem($index)">X</a>]
-  //-       </td>
-  //-     </tr>
-  //-     <tr>
-  //-       <td><a href ng:click="addItem()" class="btn btn-small">add item</a></td>
-  //-       <td></td>
-  //-       <td>Total:</td>
-  //-       <td>{{total() | currency}}</td>
-  //-     </tr>
-  //-   </table>
-  //- </div>
-
+    div.all-languages-in-cart
+      div.guide-in-cart-box(ng-repeat='item in items', ng-animate=" 'animate' ")
+        div.guide-in-cart
+          img(src='{{item.image}}', width='80px')
+          i.fa.fa-times-circle-o(ng-click="removeFromCart($index)")
+          td
+            input.guide-quantity(type="number", ng:model="item.qty", ng:required, placeholder='1')
 
   select.language-select(ng-model="searchparam")
     option(value="", selected) Choose Language
     option(ng-repeat="guide in guides", value="{{guide.language}}") {{guide.language}}
 
   div.all-guides
-    div.guide-box(ng-repeat='guide in guides | filter: searchparam')
+    div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
       div.cover-box
         img.guide-cover(ng-src='{{guide.image}}')
-        addToCart(ng-click="addToCart(guide)") Add to Cart
+        button.btn.btn-primary.add-to-cart(ng-click="addToCart(guide)") Add to Cart
 
       div.guide-text
-        p.guide-title {{guide.language}}
+        a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
         div.guide-description {{guide.description}}

@@ -55,6 +55,7 @@ app.post('/purchase', routes.purchase);
 // JSON API
 app.get('/api/name', api.name);
 app.get('/api/guides', api.guides);
+app.get('/api/guides/:language', api.guides);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

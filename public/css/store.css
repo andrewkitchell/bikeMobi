@@ -1,7 +1,20 @@
-/* app css stylesheet */
+.my-show-hide-animation.ng-show-remove,
+.my-show-hide-animation.ng-show-add {
+  /* remember, the .hg-hide class is added to element
+     when the active class is added causing it to appear
+     as hidden. Therefore set the styling to display=block
+     so that the hide animation is visible */
+  display:block!important;
+}
 
-.title {
-	color: red;
+.my-show-hide-animation.ng-show-add {
+  -webkit-animation:2s hide;
+  animation:2s hide;
+}
+
+.my-show-show-animation.ng-show-remove {
+  -webkit-animation:2s show;
+  animation:2s show;
 }
 
 
@@ -11,35 +24,130 @@
 	margin-top: 100px;
 }
 
-.shopping-cart {
-	background: white;
-	box-shadow: 1px 1px 10px rgba(0,0,0,.2);
-	height: 100%;
-	padding: 2%;
-	position: absolute;
-	right: 0;
-	text-align: center;
-	top: 0;
-	width: 20%;
-	z-index: 111110;
+.total {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	box-shadow: inset 1px -1px 0 rgba(255,255,255,.5);
+	-webkit-box-shadow: inset 1px -1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: inset 1px -1px 0 rgba(255,255,255,.5);
+	position: relative;
+	padding: 20px;
+	height: 120px;
 }
 
-.language-in-cart {
+.total p {
+	color: rgba(0,0,0,.67);
+	font-size: 14px;
+	font-family: helvetica;
+	margin: 0 0 5px;
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+}
+
+.total-logo {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	opacity: .2;
+}
+
+.shopping-cart {
+	background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	box-shadow: -2px 0 16px rgba(0,0,0,.45),inset 1px 0 0 rgba(255,255,255,.5);
+	-webkit-box-shadow: -2px 0 16px rgba(0,0,0,.45),inset 1px 0 0 rgba(255,255,255,.5);
+	-moz-box-shadow: -2px 0 16px rgba(0,0,0,.45),inset 1px 0 0 rgba(255,255,255,.5);
+	z-index: 9999991;
+	overflow: scroll;
+	right: 0;
+}
+
+.shopping-cart.ng-hide-add,
+.shopping-cart.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+  width: 280px;
+}
+
+.shopping-cart.ng-hide {
+  opacity:0;
+}
+
+/*
+.shopping-cart.ng-enter {
+	animation: fadeIn 1s;
+}
+
+.guide-in-cart-box.ng-enter {
+	animation: fadeIn 1s;
+  opacity: 1;
+}*/
+
+.all-languages-in-cart {
+	overflow: scroll;
+	height: 80%;
+	top: 0;
+}
+
+.guide-in-cart-box {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,.5);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.35);
+	-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,.5);
 	display: block;
-	margin: 10px auto;
+	padding: 10px 0;
+	position: relative;
 	text-align: center;
+	width: 80%;
+	margin-left: 10%;
 }
 
 .guide-in-cart {
-	display: block;
-	margin-bottom: 4px;
+	border-radius: 4px;
+	margin: 10px auto;
+	width: 100px;
 }
 
-.guide-quantity {
-	display: block;
-	width: 50px;
+.guide-in-cart img {
+	box-shadow: 1px 1px 8px rgba(0,0,0,.2);
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+
+.guide-in-cart img:hover {
+	box-shadow: 1px 1px 10px rgba(0,0,0,.4);
+	cursor: pointer;
+}
+
+.guide-in-cart i {
+	position: absolute;
+	top: 10px;
+	font-size: 20px;
+	color: #ccc;
+	right: 0px;
+}
+
+	.guide-in-cart i:hover {
+		color: #aaa;
+		cursor: pointer;
+	}
+
+.guide-in-cart input {
+	width: 20%;
+	min-width: 50px;
+	height: 30px;
+	position: absolute;
+	bottom: 53px;
+	left: 40%;
+	box-shadow: 1px 1px 4px rgba(0,0,0,.5);
 	text-align: center;
 }
+
 
 .all-guides {
 	margin: 0 0 0 6%;
@@ -60,8 +168,17 @@
 .cover-box {
 	display: inline-block;
 	margin-right: 20px;
+	min-width: 150px;
 	position: relative;
 }
+
+button.add-to-cart {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	width: 20%;
+}
+
 
 .guide-cover {
 	border-radius: 4px;

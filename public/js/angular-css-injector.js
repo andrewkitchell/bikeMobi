@@ -69,7 +69,6 @@ angular.module('angular.css.injector', [])
 
             singlePageMode = bool;
 
-            alert('called');
         };
 
         return {
