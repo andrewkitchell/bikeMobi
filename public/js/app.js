@@ -10,6 +10,7 @@ var myApp = angular.module('myApp', [
   'myApp.directives',
   'myApp.animations',
   'ui.event',
+  'ui.bootstrap',
   'angular.css.injector'
 ]).
 

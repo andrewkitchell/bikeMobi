@@ -49,16 +49,15 @@ angular.module('myApp.controllers', []).
     cssInjector.setSinglePageMode(true);
     cssInjector.add("/css/free.css");
 
-    $scope.name = 'Free';
-
-    $scope.this = 3;
+    $scope.typing = true;
+    $scope.showForm = false;
 
     $scope.storyHide = function($event) {
-      alert('story hide');
+      typing = false;
     };
 
     $scope.keydown = function($event) {
-      alert('story hide');
+      typing = false;
     };
 
   }).
@@ -124,6 +123,32 @@ angular.module('myApp.controllers', []).
   }]).
 
 
+
+  controller('ModalDemoCtrl', ['$scope', '$modal', '$log', function ($scope, $modal, $log) {
+
+    $scope.items = ['hello', 'goodbye', 'item3'];
+
+    $scope.open = function () {
+
+      var modalInstance = $modal.open({
+        templateUrl: 'myModalContent.html',
+        controller: ModalInstanceCtrl,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
+  }]).
+
+
   controller('AboutCtrl', function ($scope) {
     $scope.name = 'About';
   }).
@@ -133,3 +158,19 @@ angular.module('myApp.controllers', []).
   controller('DemoCtrl', function ($scope) {
     $scope.name = 'Demo';
   });
+
+  var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+};
