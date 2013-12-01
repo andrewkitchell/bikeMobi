@@ -56,3 +56,9 @@ exports.purchase = function(req, res) {
       }
     });
 };
+
+
+exports.submit_story = function(req, res) {
+  console.log('in submit story')
+  console.log(req);
+}

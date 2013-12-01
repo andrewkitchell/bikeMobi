@@ -50,10 +50,11 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 app.post('/purchase', routes.purchase);
+app.post('/submit-story', routes.submit_story);
 
 
 // JSON API
-app.get('/api/name', api.name);
+// app.get('/api/name', api.name);
 app.get('/api/guides', api.guides);
 app.get('/api/guides/:language', api.guides);
 

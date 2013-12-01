@@ -91,6 +91,7 @@ angular.module('myApp.controllers', []).
     }).
 
     success(function (data, status, headers, config) {
+      console.log('data')
       $scope.guide = data.guides[$routeParams.guide];
     }).
 
@@ -103,23 +104,30 @@ angular.module('myApp.controllers', []).
 
   controller('ShoppingCartCtrl', ['$scope', '$http', function($scope, $http) {
 
-    $scope.addToCart = function(language) {
-      $scope.items.push(language);
-      $scope.updateCart();
+    $scope.invoice = {
+        items: []
     };
 
-    $scope.removeFromCart = function(index) {
-      $scope.items.splice(index, 1);
-      $scope.updateCart();
+    $scope.addItem = function(language) {
+        $scope.invoice.items.push({
+            qty: 1,
+            guide: language,
+            price: 10.95
+        });
+    },
+
+    $scope.removeItem = function(index) {
+        $scope.invoice.items.splice(index, 1);
+    },
+
+    $scope.total = function() {
+        var total = 0;
+        angular.forEach($scope.invoice.items, function(item) {
+            total += item.qty * 10.95;
+        });
+        return total;
     };
 
-    $scope.items = [];
-
-    $scope.totalCost = '900';
-
-    $scope.updateCart = function() {
-      $scope.totalCost = $scope.items.length * 1095;
-    };
   }]).
 
 

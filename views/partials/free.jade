@@ -16,15 +16,17 @@ a(href="/demo")
 
 div(ng-controller="ModalDemoCtrl")
 	script(id='myModalContent.html', type='text/ng-template')
-		input(name='name', placeholder="Your Name", required)
+
+		// NOTE WHO THE TEXT IS DIFFERENT, BECAUSE ITS A SCRIPT!!!!
+
+		input(name='name', placeholder="Your Name", required, ng-model="firstName")
 		input(name='name', placeholder="Your Address", required)
 		select
 			option(ng-repeat="language in languages") {{language}}
 		input(type="checkbox", name="completed", checked=(true===false ? "checked" : undefined)) Can we share your masterpiece?
-		button.submit-button(submit="/email-story") Submit
 
 		.modal-footer
-			button.btn.btn-primary(ng-click="ok()") OK
+			button.btn.btn-primary(ng-click="submit($event)") Submit
 			button.btn.btn-warning(ng-click="cancel()") Cancel
 
 	button.btn(ng-click="open()") Finished!
