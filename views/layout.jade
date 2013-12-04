@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 doctype 5
+
 html(ng-app="myApp")
   head
     meta(charset='utf8')
@@ -7,17 +8,30 @@ html(ng-app="myApp")
     title 30WORDS
     //- script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js")
     script(src='http://code.jquery.com/jquery-2.0.3.js')
+    script(src="https://checkout.stripe.com/checkout.js")
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Open+Sans+Condensed:300', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Rouge+Script', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/app.css')
     link(rel='stylesheet', href='/css/free.css')
     link(rel='stylesheet', href='/css/store.css')
     //- link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/animate.css/2.0/animate.min.css")
     //- link(ng-repeat="stylesheet in stylesheets", ng-href="{{stylesheet.href}}", type="{{stylesheet.type}}", rel="stylesheet")
-
   body
 
     navlist(ng-controller="NavController")
 
     block body
+
+    div.footer
+        ul.footer-list
+            a
+                li
+                    span hello@30words.com
+                    i.fa.fa-envelope
+                li
+                    i.fa.fa-facebook-square
+            a
+                li
+                    i.fa.fa-twitter-square

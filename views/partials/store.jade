@@ -1,58 +1,67 @@
-div.main(ng-controller="ShoppingCartCtrl")
-  form(action="/purchase", method="post")
-    script(src="https://checkout.stripe.com/checkout.js"
-    , class="stripe-button"
-    , data-description="{{items.length}} language guides"
-    , data-image="/images/guide-corner-squared.jpg"
-    , data-key="pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9"
-    , data-quantity='{{items.length}}'
-    , data-purchased_guides='Some Guides'
-    , data-name="30 WORDS"
-    , data-amount="{{total()}}")
-    input(type="hidden", name="amount", value="{{total()}}")
-    input(type="hidden", name="purchased_guides", value='Some Guides')
-  //- div(ng-init="isHidden=false")
-  //-   button(ng-click="isHidden=!isHidden") Show / Hide Element
-  //-   div.my-show-hide-animation(ng-hide="isHidden") I am visible!
+div.top-main
+  img.hero(src="/images/road_crop_no_arrow.png")
+  div
+    p All 30 WORDS language guides:
+    ul
+      li contain 900 words & phrases
+      li weigh 4 ounces
+      li are 100% waterproof
+      li essentially tear-proof
+      li 100% upcycable
+      li slight larger than a passport
 
-  div.shopping-cart(ng-show="invoice.items.length")
+div(ng-controller="ShoppingCartCtrl")
+  div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")
 
     div.total
       img.total-logo(src="/images/logo_30words_store.png")
-      p Your Total:
-      p {{ total() | currency:"$" }}
-      //- form(action="/purchase", method="post")
-      //-   script(src="https://checkout.stripe.com/v3/checkout.js"
-      //-   , class="stripe-button"
-      //-   , data-description="{{items.length}} language guides"
-      //-   , data-image="/images/guide-corner-squared.jpg"
-      //-   , data-key="pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9"
-      //-   , data-quantity='{{items.length}}'
-      //-   , data-purchased_guides='Some Guides'
-      //-   , data-name="30 WORDS"
-      //-   , data-amount="{{total()}}")
-      //-   input(type="hidden", name="amount", value="{{total()}}")
-      //-   input(type="hidden", name="purchased_guides", value='Some Guides')
+      p(ng-pluralize, count="totalNumberInCart()", when="{'0': 'No guides in your cart', 'one': '1 guide in your cart', 'other': '{} guides in your cart'}")
+      p Your total is {{ totalCostForLocal() | currency:"$" }}
+
+      button#customButton.stripe-button-el
+        span Place Order
+      span.bottom-braid
+
+      script
+        // this is the custom Stripe form, added by me
+        var handler = StripeCheckout.configure({
+        key: 'pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9',
+        image: '/images/guide-corner-squared.jpg',
+        token: function(token, args) {
+          // Use the token to create the charge with a server-side script.
+          }
+        });
+        document.getElementById('customButton').addEventListener('click', function(e) {
+        // Open Checkout with further options
+          var amount = $('#shopping-cart').attr("value");
+          var description = $('#shopping-cart').attr('data-head')
+          handler.open({
+            name: '30 WORDS',
+            description: description,
+            amount: amount
+          });
+          e.preventDefault();
+        })
 
     div.all-languages-in-cart
       div.guide-in-cart-box(ng-repeat='item in invoice.items', ng-animate=" 'animate' ")
         div.guide-in-cart
-          img(src='{{item.guide.image}}', width='80px')
-          p {{ item.guide.language }}
           i.fa.fa-times-circle-o(ng-click="removeItem($index)")
-          td
-            input.guide-quantity(type="number", ng-model="item.qty", ng-required, placeholder='1')
+          img(src='{{item.guide.image}}', width='80px')
+          div.guide-in-cart-details
+            p {{ item.guide.language }}
+            td
+              input.guide-quantity(type="number", ng-model="item.qty", ng-required, placeholder='1')
+    p.add-more Click another guide to add it to your cart.
 
-  select.language-select(ng-model="searchparam")
-    option(value="", selected) Choose Language
-    option(ng-repeat="guide in guides", value="{{guide.language}}") {{guide.language}}
 
-  div.all-guides
+
+  div.all-guides(ng-class="{'thin-store': invoice.items.length}")
     div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
       div.cover-box
-        img.guide-cover(ng-src='{{guide.image}}')
-        button.btn.btn-primary.add-to-cart(ng-click="addItem(guide)") Add to Cart
+        img.guide-cover(ng-src='{{guide.image}}', ng-click="addItem(guide)")
 
       div.guide-text
         a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
+        button.btn.btn-primary.add-to-cart(ng-click="addItem(guide)") Add to Cart
         div.guide-description {{guide.description}}

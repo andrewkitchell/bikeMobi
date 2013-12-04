@@ -1,8 +1,23 @@
 block css
  link(rel='stylesheet', href='/css/demo.css')
 
+.hero-container(ng-controller="DemoSlideshowCtrl")
+ img.hero(src="/images/road_crop_no_arrow.png")
+ ul#slides
+  li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }")
+   h2.quote "{{ quote.quote }}"
+   h5.quote-author - {{ quote.author }}
 
-p{{name}}
+ div.demo-box
+  img.hero-image(src="/images/guideOpened.png")
+  img.guide-zoom(src="/images/guide-zoom.png")
+  div.info-blob.waterproof 100% Waterproof
+  div.info-blob.tearproof Tear Resistant
+  div.info-blob.passport Passport-Sized
+  div.info-blob.upcyclable 100% upcyclable
+  div.info-blob.access Focused Content
+  div.info-blob.nine-hundred 900 words & phrases
 
-.hero-container
- img.hero(src="/images/guideOpened.png")
+div.our-design-write-up
+ h2 30 WORDS Design Goals
+ h6 A language guide with specs?! (yep!)

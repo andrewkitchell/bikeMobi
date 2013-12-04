@@ -1,7 +1,128 @@
 /* app css stylesheet */
 
-.hero-container img {
-  margin-left: 5%;
-  margin-top: 60px;
-  width: 90%;
+.hero {
+	position: absolute;
+	top: 80px;
+	min-height: 540px;
+	width: 100%;
+	left: 0;
+	z-index: 0;
+	padding-top: 0px;
 }
+
+.hero-container {
+	margin: 40px auto 20px;
+	height: 500px;
+	text-align: center;
+	width: 92%;
+}
+
+.hero-image {
+  	width: 90%;
+	margin: 20px auto;
+}
+
+.guide-zoom {
+	position: absolute;
+	top: 0px;
+	right: 10%;
+}
+
+.demo-box {
+	position: relative;
+}
+
+.quote {
+	width: 60%;
+	margin: 20px auto 0;
+	font-weight: 500;
+	font-size: 30px;
+}
+
+.info-blob {
+	position: absolute;
+	font-size: 14px;
+	background-color: rgba(0,0,0,.4);
+	padding: 4px 8px;
+	color: white;
+	border-radius: 6px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s; /* For Safari */
+     /* End Smooth Transitions Code */
+}
+
+.info-blob:hover {
+	font-size: 18px;
+	background-color: rgba(0,0,0,.7);
+	padding: 6px 12px;
+}
+
+.expandMe:hover {
+     height: 110px;
+}
+
+.waterproof {
+	left: 34%;
+	top: 50px;
+}
+.tearproof {
+	left: 75%;
+	bottom: 60px;
+}
+
+.passport {
+	left: 55%;
+	bottom: 124px;
+}
+
+.upcyclable {
+	left: 18%;
+	bottom: 60px;
+}
+
+.access {
+	left: 83%;
+	top: 80px;
+}
+
+.nine-hundred {
+	left: 5%;
+	top: 80px;
+}
+
+.loading {
+	opacity:0.5;
+	-webkit-transition: all 0.5s;
+}
+
+#slides {
+	width:100%;
+	position:relative;
+	height: 190px;
+	margin: 0;
+	top:0;
+	bottom:0;
+	overflow:hidden;
+	-webkit-transition: all 0.5s;
+}
+
+.slide {
+	top:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	opacity:0;
+	-webkit-transform: translate3d(0, 100%, 0);
+	-webkit-transition: all 1.5s;
+}
+
+.slide.active {
+	top:0;
+	opacity:1;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.our-design-write-up h2 {
+	font-weight: 300;
+}
+

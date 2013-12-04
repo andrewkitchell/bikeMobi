@@ -1,18 +1,25 @@
 /* app css stylesheet */
 
-.guide-corner {
-  bottom: 0;
-  height: 300px;
-  opacity: .6;
-  position: fixed;
-  right: -251px;
-  width: 462px;
-  transition: opacity 0.3s easeIn;
-  z-index: -1;
+.free-intro {
+  margin: 0 20%;
+  text-align: center;
+  width: 60%;
+  padding-top: 40px;
 }
 
-.guide-corner:hover {
-  opacity: 1;
+.free-intro p {
+  color: #333;
+  font-size: 38px;
+  font-weight: 300;
+  margin-bottom: 46px;
+  line-height: 45px;
+}
+
+.free-intro h2 {
+  font-size: 48.5px;
+  font-family: 'Rouge Script';
+  color: #333;
+  font-weight: 200;
 }
 
 .authorsDetails {
@@ -26,13 +33,25 @@
 }
 
 .story-box {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(235, 235, 235, 0.5);
   border: none;
   border-radius: 0;
   box-shadow: 0 0 28px rgba(233, 72, 92, 0.04) inset;
-  font-size: 18px;
+  font-size: 16px;
   padding: 20px;
-  width: 100%;
+  width: 70%;
+  border-radius: -1px;
   min-height: 400px;
   z-index: 10;
+  margin: 50px 15%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.modal-area {
+  text-align: center;
+}
+
+.modal-area button {
+  margin: 0px auto 40px;
 }

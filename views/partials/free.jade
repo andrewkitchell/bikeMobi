@@ -1,23 +1,16 @@
-div(ng-click="typing = !typing") {{typing}}
-	div.free-intro(ng-show="typing", class="ng-hide") We love the idea of students talking to those they meet.
-		| Therefore, we're making it easy for students to get a free
-		| language guide. All you have to do is create a fictional story
-		| (humor us, write at least ~30 words) that might occur if you
-		| talk to people you meet during your travels.
+img.hero(src='/images/mongolia.png');
 
+div
+	div.free-intro(ng-show="typing", class="ng-hide")
+		p Student travelers should always be able to talk to those they meet.
+		p If you are a student, we will happily ship you a free language guide for your travels.
+		p Simply write a short story (below) about an adventure you might have if you say hello to people you meet during your adventures.
+		p We'll ship you any guide you like.
 
-form.story-form
-textarea.story-box(ng-keydown="", placeholder="It had rained for 6 straight days.")
+	textarea.story-box(ng-keydown="typing = false", placeholder="When we knocked on the door, we had no idea what we would find...")
 
-//- button.submit-button(ng-click="showform=!showform") Finished!
-
-a(href="/demo")
-	img.guide-corner(src='/images/guide-corner.jpg')
-
-div(ng-controller="ModalDemoCtrl")
+div.modal-area(ng-controller="ModalDemoCtrl")
 	script(id='myModalContent.html', type='text/ng-template')
-
-		// NOTE WHO THE TEXT IS DIFFERENT, BECAUSE ITS A SCRIPT!!!!
 
 		input(name='name', placeholder="Your Name", required, ng-model="firstName")
 		input(name='name', placeholder="Your Address", required)
@@ -29,4 +22,6 @@ div(ng-controller="ModalDemoCtrl")
 			button.btn.btn-primary(ng-click="submit($event)") Submit
 			button.btn.btn-warning(ng-click="cancel()") Cancel
 
-	button.btn(ng-click="open()") Finished!
+	div.free-intro(ng-show="!typing", class="ng-hide")
+		h2 Cool!
+	button.btn.btn-primary(ng-click="open()") My Masterpiece is Finished!

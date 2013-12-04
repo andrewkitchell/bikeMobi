@@ -4,14 +4,12 @@ nav.nav-list
 
   ul
     li
-     a(href='demo', ng-class="{active:isActive('/demo')}") Design
+     a(href='demo', ng-class="{active-nav:isActive('/demo')}") Specs
     li
-     a(href='about', ng-class="{active:isActive('/about')}") About
+     a(href='', ng-class="{active-nav:isActive('/blog')}") Stories
     li
-     a(href='', ng-class="{active:isActive('/blog')}") Blog
+     a(href='free', ng-class="{active-nav:isActive('/free')}") Students
     li
-     a(href='free', ng-class="{active:isActive('/free')}") Earn a Guide
-    li
-     a(href='store', ng-class="{active:isActive('/store')}") Store
+     a(href='store', ng-class="{active-nav:isActive('/store')}", ng-click="reloadCtrl()") Store
 
-  a.store-link(href='store', ng-class="{hidden:isActive('/free') || isActive('/store')}") Store
+  a.store-link(href='store') Store

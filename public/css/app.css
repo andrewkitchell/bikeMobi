@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   transition: 0.2s ease;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -24,29 +26,31 @@ body {
 
 .nav-list {
   background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 0 14px rgba(0,0,0,.2);
+  border-bottom: 1px solid #eee;
   height: 80px;
   left: 0;
   padding: 0 6%;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 12;
+  box-shadow: 1px 1px 18px rgba(206, 206, 206, 0.1);
 }
 
-.active {
-  border-bottom: 2px solid #FF0033;
+.active-nav {
+  border-bottom: 1px solid #FC5E59;
+  border-top: 1px solid #FC5E59;
 }
 
 .main {
-  margin-top: 80px;
+  padding: 0;
 }
 
 .logo {
   display: inline-block;
   margin-right: 10px;
   width: 80px;
-  height: 80px;
+  height: 79px;
   border: none !important;
   position: relative;
   top: 0px;
@@ -65,16 +69,17 @@ body {
 }
 
 .nav-list ul li a {
-  color: #555;
+  color: #333;
   font-family: 'Open Sans';
   font-size: 12px;
-  font-weight: 600;
-  padding-bottom: 6px;
+  font-weight: 500;
+  padding: 6px;
   text-transform: uppercase;
 }
 
 .nav-list ul li a:hover {
-  border-bottom: 2px solid #FF0033;
+  border-bottom: 1px solid #FC5E59;
+  border-top: 1px solid #FC5E59;
   text-decoration: none;
 }
 
@@ -87,24 +92,62 @@ body {
   background-image: -ms-linear-gradient(top, #FC5E59, rgba(206, 5, 5, 0.78));
   background-image: -o-linear-gradient(top, #FC5E59, rgba(206, 5, 5, 0.78));
   border-radius: 0 0 14px 14px;
-  box-shadow: 1px 1px 14px rgba(0,0,0,.24);
+  box-shadow: 1px 1px 9px rgba(0,0,0,.12);
   color: white;
   font-family: 'Open Sans';
-  font-size: 20px;
+  font-size: 16px;
   padding: 44px 34px 60px;
-  position: fixed;
+  position: absolute;
   right: 10%;
   top: 0;
-  font-weight: 400;
+  font-weight: 300;
   z-index: 3;
   text-shadow: 0 0 4px rgba(0,0,0,.2);
   transition: padding 0.2s ease;
 }
 
   .store-link:hover {
-    box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+    box-shadow: 1px 1px 6px rgba(0,0,0,.2);
     color: white;
-    padding: 48px 34px 80px;
+    padding: 44px 34px 80px;
     text-decoration: none;
     text-shadow: 0 0 4px rgba(0,0,0,.2);
   }
+
+
+.footer {
+  padding-bottom: 14px;
+  height: 38px;
+}
+
+.footer-list {
+  margin: 0 8%;
+  float: right;
+}
+
+.footer-list a li {
+  display: inline-block;
+  list-style: none;
+}
+
+.footer-list a li i {
+  color: #aaa;
+  font-size: 26px;
+  margin-right: 8px;
+}
+
+.footer-list a li span {
+  color: #aaa;
+  font-size: 12px;
+  margin-right: 8px;
+  vertical-align: top;
+  position: relative;
+  top: 4px;
+}
+
+.footer-list a:hover {
+  color: #999;
+}
+
+
+

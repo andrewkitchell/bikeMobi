@@ -9,55 +9,55 @@ exports.guides = function (req, res) {
         language: 'Arabic',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/arabic.jpg'
+        image: '/images/guideCovers/arabic.png'
       },
       Brazilian: {
         language: 'Brazilian Portuguese',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: 'images/guideCovers/portuguese.jpg'
+        image: 'images/guideCovers/brazilian.png'
       },
       French: {
         language: 'French',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/french.jpg'
+        image: '/images/guideCovers/french.png'
       },
       German: {
         language: 'German',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/german.jpg'
+        image: '/images/guideCovers/german.png'
       },
       Hebrew: {
         language: 'Hebrew',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/hebrew.jpg'
+        image: '/images/guideCovers/hebrew.png'
       },
       Italian: {
         language: 'Italian',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/italian.jpg'
+        image: '/images/guideCovers/italian.png'
       },
       Mandarin: {
         language: 'Mandarin',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/mandarin.jpg'
+        image: '/images/guideCovers/mandarin.png'
       },
       SaSpanish: {
         language: 'Spanish South American',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/saspanish.jpg'
+        image: '/images/guideCovers/saspanish.png'
       },
       EuSpanish: {
         language: 'Spanish European',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters such as keeping pace with your instructor.',
-        image: '/images/guideCovers/euspanish.jpg'
+        image: '/images/guideCovers/euspanish.png'
       }
     }
   });

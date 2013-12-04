@@ -19,9 +19,9 @@ exports.partials = function (req, res) {
 };
 
 
-// exports.store = function(req, res){
-//   res.render('store');
-// };
+exports.store = function(req, res){
+  res.render('store');
+};
 
 
 exports.purchase = function(req, res) {
