@@ -1,16 +1,16 @@
 nav.nav-list
   a.logo-box(href='/')
-    img.logo(src="/images/logo_30words.png")
+    img.logo(src="/images/logos.png")
 
   ul
     li
      a(href='home', ng-class="{active:isActive('/')}") Home
     li
-     a(href='demo', ng-class="{active:isActive('/demo')}") Design
-    li
-     a(href='blog', ng-class="{active:isActive('/blog')}") Blog
+     a(href='demo', ng-class="{active:isActive('/demo')}") Design & Reviews
     li
      a(href='free', ng-class="{active:isActive('/free')}") Students
+    li
+     a(href='blog', ng-class="{active:isActive('/blog')}") Blog
     li
      a(href='store', ng-class="{active:isActive('/store')}", ng-click="reloadCtrl()") Store
 

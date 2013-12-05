@@ -1,12 +1,13 @@
-img.hero(src='/images/mongolia.png');
+div.hero-box
+	img.hero(src='/images/mongolia.png');
+	h2 Every student should be able to say "Hello" to those they meet
 
 div
 	div.free-intro
-		p Student travelers should always be able to talk to those they meet.
-		p If you are a student, we will happily ship you a <span>free</span> language guide for your travels.
-		p Simply write a short story (below) about an adventure you might have if you say "hello" to people you meet during your adventures.
-		p We'll ship you any guide you like.
-		p Happy Travels!
+		p If you are a student and need a language guide for your travels, we want to help!
+		p Simply write a short story (below) about an adventure you might have if you say "hello"
+			| to people you meet during your adventures.
+		p We'll ship you any guide you choose.
 
 	div.write-here-message Write your story here:
 	textarea.story-box(placeholder="eg. We had never tasted anything quite like it.")
@@ -14,9 +15,8 @@ div
 	//- div.modal-area(ng-controller="ModalDemoCtrl")
 	#myModal.modal.fade
 		.modal-dialog
-			.modal-header Thank you!
-			.modal-body We're going to redirect you to our donations page.
-			.modal-body When you get there, please select <span>'KIDmob'</span> from the dropdown list.
+			.modal-header Excellent!
+			.modal-body Now, add a bit of info, and we'll ship you a guide.
 			//- a.btn.btn-primary.donate-button(target="_blank", href="https://donatenow.networkforgood.org/1442843") Donate Now
 
-	button.store-button.german-button(data-toggle="modal", data-target="#myModal") My Masterpiece is Finished!
+	button.free-button(data-toggle="modal", data-target="#myModal") My Masterpiece is Finished!

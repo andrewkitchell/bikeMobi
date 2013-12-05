@@ -11,15 +11,15 @@
 }
 
 .hero-container {
-	margin: 40px auto 20px;
-	height: 500px;
+	margin: 120px auto 10px;
+	height: 440px;
 	text-align: center;
 	width: 92%;
 }
 
 .hero-image {
-  	width: 90%;
 	margin: 20px auto;
+  	width: 80%;
 }
 
 .guide-zoom {
@@ -33,10 +33,11 @@
 }
 
 .quote {
-	width: 60%;
-	margin: 20px auto 0;
-	font-weight: 500;
+	color: #444;
 	font-size: 30px;
+	font-weight: 500;
+	margin: 20px auto 0;
+	width: 60%;
 }
 
 .info-blob {
@@ -100,7 +101,7 @@
 	position:relative;
 	height: 190px;
 	margin: 0;
-	top:0;
+	top:15px;
 	bottom:0;
 	overflow:hidden;
 	-webkit-transition: all 0.5s;
@@ -137,26 +138,6 @@
 
 /* BELOW THE FOLD */
 
-.languages-in-print {
-  background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
-  margin: 0;
-  padding: 15px 18% 15px;
-  text-align: center;
-  width: 100%;
-}
-
-.languages-in-print li {
-  display: inline-block;
-  line-height: 26px;
-  margin: 0 25px;
-  vertical-align: top;
-}
-
-.languages-in-print li a {
-  color: #555;
-  font-weight: 300;
-}
-
 .below-the-fold {
   background: white;
   width: 70%;
@@ -164,22 +145,16 @@
 }
 
 .below-title {
-  margin-bottom: 24px;
-  margin: 60px 0%;
+  margin: 40px 0;
   text-align: center;
   width: 100%;
 }
 
 .below-title h1 {
   color: #555;
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 50px;
-}
-
-.below-title h1.rouge {
-  font-family: 'Rouge Script';
-  font-size: 74px;
+  line-height: 34px;
 }
 
 .feature-box {
@@ -233,8 +208,22 @@
   padding: 30px 0 0;
 }
 
+.feature-box:last-of-type {
+	text-align: center;
+}
 
+.big-button {
+	background-color: #60C2DD;
+	display: inline-block;
+	color: white;
+	font-size: 24px;
+	font-weight: 300;
+	margin: 30px 0 50px;
+	padding: 18px 30px;
+	border-radius: 4px;
+}
 
-
-
-
+	.big-button:hover {
+		background-color: #40B2CD;
+		color: white;
+	}

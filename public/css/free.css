@@ -1,5 +1,25 @@
 /* app css stylesheet */
 
+.hero-box {
+  position: relative;
+}
+
+.hero {
+  margin-top: 0;
+}
+
+.hero-box h2 {
+  position: absolute;
+  bottom: 20px;
+  width: 52%;
+  left: 20%;
+  color: white;
+  font-size: 40px;
+  line-height: 50px;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 600;
+}
+
 .free-intro {
   margin: 40px 20% 20px;
   width: 60%;
@@ -11,13 +31,6 @@
   font-weight: 300;
   margin-bottom: 30px;
   line-height: 35px;
-}
-
-.free-intro h2 {
-  font-size: 48.5px;
-  font-family: 'Rouge Script';
-  color: #333;
-  font-weight: 200;
 }
 
 .free-intro span {
@@ -35,10 +48,10 @@
 }
 
 .write-here-message {
-  color: #aaa;
+  color: #FC5E59;
   font-size: 26px;
   font-weight: 100;
-  margin: 80px 0 0px 20%;
+  margin: 20px 0 0px 20%;
 }
 
 .story-box {
@@ -92,7 +105,21 @@
    font-size: 20px;
 }
 
-.store-button {
+.free-button {
+  border: none;
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 300;
+  background-color: #FC5E59;
   margin: 0 20% 50px;
+  padding: 8px 12px;
   border-radius: 2px;
 }
+
+  .free-button:hover {
+    background-color: #DA5E59;
+  }
+
+
+

@@ -2,7 +2,7 @@ block css
  link(rel='stylesheet', href='/css/landing.css')
 
 .hero-container
- img.hero(src="/images/road_crop_no_arrow.png")
+ img.hero-image(src="/images/road_crop_no_arrow.png")
  div.hero-content
   h1.title Meet 30 WORDS
   h5.subtitle Language Guides for Adventurous Travelers
@@ -15,11 +15,32 @@ block css
         div.hello-transliteration {{image.transliteration}}
 
 ul.languages-in-print
-  p Languages in print:
+  p 9 Languages in print
   li(ng-repeat="guide in guides", ng-class="{{ guide.language | lowercase }}")
     a(href="/store/{{guide.langauge}}")
       i.fa.fa-dot-circle-o
       | {{ guide.language }}
+
+div.our-mission
+  div.our-mission-header
+    img.guide-open(src="/images/guideOpened.png")
+    h1 Langauge Guides: Re-Imagined
+    h3 Portable <i class="fa fa-circle"></i> Focused <i class="fa fa-circle"></i> Durable
+  p We designed 30 WORDS to help travelers connect to people they meet.
+  p Speaking even a few words of the local language gives you intimate access to
+    | cultures, helps you build relationships, and leads to unforgettable experiences.
+  p Whether bargaining at the local market, asking for advice, or simply saying hello,
+    | a small amount of conversational ability turns any stranger into a friend.
+  p When you travel with 30 WORDS, expect doors to open, and your adventures to top
+    | what you imagined possible before you left home.
+  p Happy Travels,
+  img(src="/images/signatures.png")
+  p.signature-title - co-creators of 30 WORDS
+
+  //- div.button-box
+  //-   a(href="/demo") Demo
+  //-   a(href="/store") Store
+
 
 ul.as-seen-in
   div.as-seen-in-title As seen in:

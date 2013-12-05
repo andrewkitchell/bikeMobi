@@ -58,7 +58,7 @@ div(ng-controller="ShoppingCartCtrl")
   div.all-guides(ng-class="{'thin-store': invoice.items.length}")
 
     div.shipping-details
-      p Language guides ship the day after they are ordered.
+      p Guides ship the day after you order, and cost $10.95 each.
       p Questions? Bulk Orders? <a href="mailto:hello@30words.com" target="_blank">hello@30words.com</a>
 
     div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
@@ -68,4 +68,5 @@ div(ng-controller="ShoppingCartCtrl")
       div.guide-text
         a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
         button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
-        div.guide-description {{guide.description}}
+        div.guide-description(ng-bind-html="guide.description")
+
