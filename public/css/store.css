@@ -1,27 +1,48 @@
-.my-show-hide-animation.ng-show-remove,
-.my-show-hide-animation.ng-show-add {
-  /* remember, the .hg-hide class is added to element
-     when the active class is added causing it to appear
-     as hidden. Therefore set the styling to display=block
-     so that the hide animation is visible */
-  display:block!important;
+
+.hero {
+	margin-top: -90px;
 }
 
-.my-show-hide-animation.ng-show-add {
-  -webkit-animation:2s hide;
-  animation:2s hide;
+.store-top-content {
+	position: absolute;
+	top: 185px;
+	margin-left: 8%;
+	text-align: center;
+	width: 84%;
 }
 
-.my-show-show-animation.ng-show-remove {
-  -webkit-animation:2s show;
-  animation:2s show;
+.store-top-content h1 {
+	font-size: 48px;
+	line-height: 50px;
+	margin-bottom: 12px;
+	font-weight: 400;
+	text-shadow: -1px 1px 1px rgb(255, 255, 255);
+	color: #444;
 }
 
+.fa-circle {
+	font-size: 6px;
+	position: relative;
+	top: -11px;
+	color: #777;
+	margin: 0 2px;
+}
 
-.language-select {
-	display: block;
-	margin-left: 6%;
-	margin-top: 100px;
+.features-list {
+	margin-left: 15%;
+	width: 70%;
+}
+
+.features-list li {
+	display: inline-block;
+	margin-right: 15px;
+	margin-left: 15px;
+	line-height: 30px;
+	font-size: 15px;
+	list-style: none;
+	color: white;
+	font-weight: 300;
+	text-shadow: 1px 1px 6px rgb(83, 82, 82);
 }
 
 .total {
@@ -154,7 +175,6 @@
 	text-align: center;
 }
 
-
 .bottom-braid {
 	display: block;
 	position: absolute;
@@ -177,17 +197,35 @@
 }
 
 .all-guides {
-	margin: 0 0 0 6%;
-	width: 88%;
+	margin: 40px 0 0 8%;
+	width: 84%;
+}
+
+.shipping-details {
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	color: #777;
+	font-weight: 400;
+	margin-left: 25%;
+	margin-bottom: 30px;
+	padding: 10px 0;
+	text-align: center;
+	width: 50%;
+}
+
+.shipping-details p {
+	margin: 5px 0;
+}
+
+.shipping-details a {
+	color: #555;
 }
 
 .guide-box {
 	display: inline-block;
-	min-height: 400px;
 	min-width: 400px;
 	width: 48%;
-	background-color: #f7f7f7;
-	margin: 10px 2% 0 0;
+	margin: 40px 2% 40px 0;
 	vertical-align: top;
 	padding: 15px;
 }
@@ -207,10 +245,53 @@ button.add-to-cart {
 	font-size: 12px;
 }
 
+.guide-box:nth-of-type(3n-2) .cover-box img {
+	transform:rotate(-1deg);
+	-ms-transform:rotate(-1deg); /* IE 9 */
+	-webkit-transform:rotate(-1deg); /* Safari and Chrome */
+}
+
+.guide-box:nth-of-type(3n-1) .cover-box img {
+	transform:rotate(-2deg);
+	-ms-transform:rotate(-2deg); /* IE 9 */
+	-webkit-transform:rotate(-2deg); /* Safari and Chrome */
+}
+
+.guide-box:nth-of-type(3n) .cover-box img {
+	transform:rotate(1deg);
+	-ms-transform:rotate(1deg); /* IE 9 */
+	-webkit-transform:rotate(1deg); /* Safari and Chrome */
+}
+
+/*
+.guide-box:nth-of-type(3n-2) .cover-box:hover img {
+	transform:rotate(2deg);
+	-ms-transform:rotate(2deg);
+	-webkit-transform:rotate(2deg);
+}
+
+.guide-box:nth-of-type(3n-1) .cover-box:hover img {
+	transform:rotate(1deg);
+	-ms-transform:rotate(1deg);
+	-webkit-transform:rotate(1deg);
+}
+
+.guide-box:nth-of-type(3n) .cover-box:hover img {
+	transform:rotate(-1deg);
+	-ms-transform:rotate(-1deg);
+	-webkit-transform:rotate(-1deg);
+}
+*/
+
+.guide-box .cover-box:hover img {
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
+}
 
 .guide-cover {
-	border-radius: 2px;
-	box-shadow: 0 5px 6px rgba(0,0,0,.2);
+	border-radius: 4px;
+	box-shadow: 0 5px 8px rgba(0,0,0,.3);
 	display: inline-block;
 	width: 200px;
 }

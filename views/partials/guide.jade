@@ -32,8 +32,8 @@ div.main(ng-controller="ShoppingCartCtrl")
     div.guide-box
       div.cover-box
         img.guide-cover(ng-src='{{guide.image}}')
-        button.btn.btn-primary.add-to-cart(ng-click="addToCart(guide)") Add to Cart
 
       div.guide-text
-        p.guide-title {{guide.language}}
+        p.guide-title{{guide.language}}
+        button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
         div.guide-description {{guide.description}}

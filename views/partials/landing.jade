@@ -5,7 +5,7 @@ block css
  img.hero(src="/images/road_crop_no_arrow.png")
  div.hero-content
   h1.title Meet 30 WORDS
-  h5.subtitle Focused, Durable, and Portable Language Guides for Epic Adventures
+  h5.subtitle Language Guides for Adventurous Travelers
 
   ul#slides(ng-controller="LandingSlideshowCtrl")
     li.slide(ng-repeat="image in images", ng-class="{ active : image.isActive }")
@@ -14,61 +14,22 @@ block css
         div.hello {{image.hello}}
         div.hello-transliteration {{image.transliteration}}
 
-div.below-the-fold
-  p.as-seen-in-title As seen in:
-  ul.as-seen-in
-    li
-      a.logo-item.practical-logo(href="")
-    li
-      a.logo-item.nytimes-logo(href="")
-    li
-      a.logo-item.foxnews-logo(href="")
-    li
-      a.logo-item.vagabonish-logo(href="")
-    li
-      a.logo-item.goBackpacking-logo(href="")
+ul.languages-in-print
+  p Languages in print:
+  li(ng-repeat="guide in guides", ng-class="{{ guide.language | lowercase }}")
+    a(href="/store/{{guide.langauge}}")
+      i.fa.fa-dot-circle-o
+      | {{ guide.language }}
 
-  .feature-box
-    div
-      h2 Holiday Time!
-      div 30 WORDS slides nicely into any stocking.  Or pocket for that matter.
-    img(src='/images/guideOpenedTags.png')
-
-  .feature-box
-    img(src='/images/guideOpened.png')
-    div.float-right
-      h2 Ultra-Durable
-      div Why make a language guide durable?  Because we designed 30 WORDS to be in your pocket, all day, for every day of your adventure.  Traveling can be messy -- 30 WORDS is tough enough to handle any adventure.
-
-  .feature-box
-    div
-      h2 900 Words & Phrases
-      div 30 WORDS are all you need to start the conversation.  We focus on providing quick access to the words you need, so you don't spend time flipping through a book, you spend time talking!
-    img(src='/images/guide-zoom.png')
-
-  .feature-box
-    img(src='/images/guideOpened.png')
-    div.float-right
-      h2 100% Upcyclable
-      div We print on a material that is waterproof, tear-resistant, and 100% upcyclable.  In fact, we only went to print once we found a material that we loved.  We're happy to talk paper all day - write us if you have any questions!
-
-  .feature-box
-    div
-      h2 Light & Portable
-      div 30 WORDS slides nicely into any stocking.  Or pocket for that matter.
-    img(src='/images/six-cover.jpg')
-
-  .feature-box
-    img(src='/images/guideOpened.png')
-    div.float-right
-      h2 100% Upcyclable
-      div We print on a material that is waterproof, tear-resistant, and 100% upcyclable.  In fact, we only went to print once we found a material that we loved.  We're happy to talk paper all day - write us if you have any questions!
-
-  .feature-box
-    div
-      h2 Simple & Battery Free
-      div Rumor has it that smart-phones are the rage today.  But try pulling your Iphone out at a crowded market and bargaining with for 20% off.  Good luck!
-    img(src='/images/guideOpenedTags.png')
-
-  .feature-box
-    p Unlimited Battery Life
+ul.as-seen-in
+  div.as-seen-in-title As seen in:
+  li
+    a.logo-item.practical-logo(href="")
+  li
+    a.logo-item.foxnews-logo(href="")
+  li
+    a.logo-item.nytimes-logo(href="")
+  li
+    a.logo-item.vagabonish-logo(href="")
+  li
+    a.logo-item.goBackpacking-logo(href="")

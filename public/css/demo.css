@@ -24,8 +24,8 @@
 
 .guide-zoom {
 	position: absolute;
-	top: 0px;
-	right: 10%;
+	right: 12%;
+	top: -52px;
 }
 
 .demo-box {
@@ -122,7 +122,119 @@
 	-webkit-transform: translate3d(0,0,0);
 }
 
-.our-design-write-up h2 {
-	font-weight: 300;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BELOW THE FOLD */
+
+.languages-in-print {
+  background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
+  margin: 0;
+  padding: 15px 18% 15px;
+  text-align: center;
+  width: 100%;
 }
+
+.languages-in-print li {
+  display: inline-block;
+  line-height: 26px;
+  margin: 0 25px;
+  vertical-align: top;
+}
+
+.languages-in-print li a {
+  color: #555;
+  font-weight: 300;
+}
+
+.below-the-fold {
+  background: white;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.below-title {
+  margin-bottom: 24px;
+  margin: 60px 0%;
+  text-align: center;
+  width: 100%;
+}
+
+.below-title h1 {
+  color: #555;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.below-title h1.rouge {
+  font-family: 'Rouge Script';
+  font-size: 74px;
+}
+
+.feature-box {
+  border-top: 1px solid #eee;
+  padding: 40px 0;
+  position: relative;
+}
+
+.image-left {
+  margin-right: 4%;
+}
+
+.feature-box h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.feature-box-write-up {
+  color: #555;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 10px;
+  vertical-align: top;
+  width: 60%;
+}
+
+.feature-box-write-up.float-right {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+
+.feature-box-write-up.float-right div {
+  float: right;
+}
+
+.feature-box-write-up div {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 18px;
+  width: 90%;
+  color: #777;
+}
+
+.feature-box img {
+  display: inline-block;
+  max-width: 35%;
+  vertical-align: middle;
+  padding: 30px 0 0;
+}
+
+
+
+
+
 

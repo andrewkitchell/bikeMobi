@@ -1,14 +1,13 @@
 div.top-main
   img.hero(src="/images/road_crop_no_arrow.png")
-  div
-    p All 30 WORDS language guides:
-    ul
-      li contain 900 words & phrases
-      li weigh 4 ounces
-      li are 100% waterproof
-      li essentially tear-proof
+  div.store-top-content
+    h1 Focused <i class='fa fa-circle'></i> Durable <i class='fa fa-circle'></i> Accessible
+    ul.features-list
+      li 900 words & phrases
+      li 4 ounces
+      li 100% waterproof
+      li tear-proof
       li 100% upcycable
-      li slight larger than a passport
 
 div(ng-controller="ShoppingCartCtrl")
   div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")
@@ -57,11 +56,16 @@ div(ng-controller="ShoppingCartCtrl")
 
 
   div.all-guides(ng-class="{'thin-store': invoice.items.length}")
+
+    div.shipping-details
+      p Language guides ship the day after they are ordered.
+      p Questions? Bulk Orders? <a href="mailto:hello@30words.com" target="_blank">hello@30words.com</a>
+
     div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
       div.cover-box
         img.guide-cover(ng-src='{{guide.image}}', ng-click="addItem(guide)")
 
       div.guide-text
         a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
-        button.btn.btn-primary.add-to-cart(ng-click="addItem(guide)") Add to Cart
+        button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
         div.guide-description {{guide.description}}

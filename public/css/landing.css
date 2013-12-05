@@ -1,4 +1,11 @@
 /* app css stylesheet */
+.fa-dot-circle-o  {
+  color: #aaa;
+  font-size: 9px;
+  margin-right: 6px;
+  position: relative;
+  top: -2px;
+}
 
 .title {
   font-size: 54px;
@@ -15,7 +22,7 @@
   font-weight: 300;
   margin-bottom: 65px;
   text-shadow: -1px 1px 1px rgb(255, 255, 255);
-  width: 52%;
+  width: 40%;
   line-height: 35px;
   margin: 0 auto;
 }
@@ -32,7 +39,7 @@
 
 .hero {
   position: absolute;
-  top: 0;
+  top: 90px;
   width: 100%;
   left: 0;
   z-index: 0;
@@ -59,96 +66,18 @@
   box-shadow: 1px 1px 25px rgba(0,0,0,.7);
 }
 
-.below-the-fold {
-  background: white;
-}
 
-.as-seen-in {
-  width: 100%;
-  text-align: center;
-  margin: 15px 0 10px;
-}
 
-p.as-seen-in-title {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 300;
-  color: #666;
-  padding: 30px 8%;
-  text-align: center;
-}
 
-.as-seen-in li {
-  margin-right: 30px;
-  margin-left: 30px;
-  list-style: none;
-  display: inline-block;
-  vertical-align: middle;
-  width: 150px;
-  text-align: center;
-}
 
-.as-seen-in li a {
-  display: inline-block;
-}
 
-.practical-logo {
-    width: 146px;
-    height: 40px;
-    background: url('/images/endorsements.png') 0 -191px no-repeat;
-}
 
-.nytimes-logo {
-    width: 99px;
-  height: 73px;
-  background: url('/images/endorsements.png') 0 0px no-repeat;
-}
 
-.foxnews-logo {
-    width: 117px;
-    height: 93px;
-    background: url('/images/endorsements.png') 0 -84px no-repeat;
-}
 
-.vagabonish-logo {
-    width: 128px;
-    height: 34px;
-    background: url('/images/endorsements.png') 0 -242px no-repeat;
-}
 
-.goBackpacking-logo {
-    width: 148px;
-    height: 38px;
-    background: url('/images/endorsements.png') 0 -288px no-repeat;
-}
 
-.guide-image {
-  border-radius: 50%;
-}
 
-.feature-box {
-  padding: 50px 6%;
-}
-
-.float-right {
-  float: right;
-  text-align: right;
-}
-
-.feature-box h2 {
-  font-size: 32px;
-}
-
-.feature-box div {
-  color: #777;
-  display: inline-block;
-  font-size: 18px;
-  width: 50%;
-}
-
-.feature-box img {
-  width: 50%;
-}
+/* SLIDESHOW */
 
 .loading {
   opacity:0.5;
@@ -160,7 +89,7 @@ p.as-seen-in-title {
   position:relative;
   height: 320px;
   margin: 0;
-  top: 34px;
+  top: 16px;
   bottom:0;
   overflow:hidden;
   -webkit-transition: all 0.2s;
@@ -222,7 +151,7 @@ p.as-seen-in-title {
 
 .hello,
 .hello-transliteration {
-  margin-left: 20px;
+  margin-left: 72%;
   text-shadow: 1px 1px 2px black;
   color: white;
   z-index: 10;
@@ -240,4 +169,191 @@ p.as-seen-in-title {
   top: 195px;
   font-size: 22px;
   font-weight: 300;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BELOW THE FOLD */
+
+.languages-in-print {
+  background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
+  margin: 0;
+  padding: 15px 18% 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.languages-in-print li {
+  display: inline-block;
+  line-height: 26px;
+  margin: 0 25px;
+  vertical-align: top;
+}
+
+.languages-in-print li a {
+  color: #555;
+  font-weight: 300;
+}
+
+.below-the-fold {
+  background: white;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.below-title {
+  margin-bottom: 24px;
+  margin: 60px 0%;
+  text-align: center;
+  width: 100%;
+}
+
+.below-title h1 {
+  color: #555;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.below-title h1.rouge {
+  font-family: 'Rouge Script';
+  font-size: 74px;
+}
+
+.feature-box {
+  border-top: 1px solid #eee;
+  padding: 40px 0;
+  position: relative;
+}
+
+.image-left {
+  margin-right: 4%;
+}
+
+.feature-box h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.feature-box-write-up {
+  color: #555;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 10px;
+  vertical-align: top;
+  width: 60%;
+}
+
+.feature-box-write-up.float-right {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+
+.feature-box-write-up.float-right div {
+  float: right;
+}
+
+.feature-box-write-up div {
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 18px;
+  width: 90%;
+  color: #777;
+}
+
+.feature-box img {
+  display: inline-block;
+  max-width: 35%;
+  vertical-align: middle;
+  padding: 30px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ENDORSEMENTS */
+
+.as-seen-in {
+  width: 90%;
+  text-align: center;
+  margin: 15px 0 10px 5%;
+}
+
+.as-seen-in-title {
+  margin-bottom: 50px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #666;
+  display: inline-block;
+  padding: 60px 1%;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.as-seen-in li {
+  margin-right: 5px;
+  margin-left: 5px;
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 127px;
+  text-align: center;
+}
+
+.as-seen-in li a {
+  display: inline-block;
+}
+
+.goBackpacking-logo {
+    width: 128px;
+    height: 34px;
+    background: url('/images/endorsements.png') 0 -233px no-repeat;
+}
+
+.nytimes-logo {
+    width: 85px;
+    height: 65px;
+    background: url('/images/endorsements.png') 0 0px no-repeat;
+}
+
+.foxnews-logo {
+    width: 82px;
+    height: 81px;
+    background: url('/images/endorsements.png') 0 -70px no-repeat;
+}
+
+.practical-logo {
+    width: 124px;
+    height: 38px;
+    background: url('/images/endorsements.png') 0 -153px no-repeat;
+}
+
+.vagabonish-logo {
+    width: 108px;
+    height: 37px;
+    background: url('/images/endorsements.png') 0 -191px no-repeat;
 }

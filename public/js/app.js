@@ -9,8 +9,6 @@ var myApp = angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.animations',
-  'ui.event',
-  'ui.bootstrap',
   'angular.css.injector'
 ]).
 

@@ -10,12 +10,18 @@
   box-sizing: border-box;
 }
 
+*:hover {
+  cursor: default;
+}
+
 a,
 img {
   border: none;
 }
 
-a:hover {
+a:hover,
+a img:hover,
+button:hover {
   cursor: pointer;
 }
 
@@ -24,12 +30,31 @@ body {
   padding: 0;
 }
 
+.main {
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  NAV LIST  */
+
 .nav-list {
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid #eee;
   height: 80px;
   left: 0;
-  padding: 0 6%;
+  padding: 0 8%;
   position: relative;
   top: 0;
   width: 100%;
@@ -37,14 +62,6 @@ body {
   box-shadow: 1px 1px 18px rgba(206, 206, 206, 0.1);
 }
 
-.active-nav {
-  border-bottom: 1px solid #FC5E59;
-  border-top: 1px solid #FC5E59;
-}
-
-.main {
-  padding: 0;
-}
 
 .logo {
   display: inline-block;
@@ -59,27 +76,28 @@ body {
 .nav-list ul {
   display: inline-block;
   position: absolute;
-  top: 30px;
+  top: 32px;
 }
 
 .nav-list ul li {
   list-style: none;
   display: inline-block;
-  margin-right: 26px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .nav-list ul li a {
-  color: #333;
+  color: #777;
   font-family: 'Open Sans';
   font-size: 12px;
-  font-weight: 500;
-  padding: 6px;
+  font-weight: 600;
+  padding: 6px 0;
   text-transform: uppercase;
 }
 
-.nav-list ul li a:hover {
-  border-bottom: 1px solid #FC5E59;
-  border-top: 1px solid #FC5E59;
+.nav-list ul li a:hover,
+.nav-list ul li a.active {
+  border-bottom: 1px solid #ccc;
   text-decoration: none;
 }
 
@@ -91,38 +109,58 @@ body {
   background-image: -moz-linear-gradient(top, #FC5E59, rgba(206, 5, 5, 0.78));
   background-image: -ms-linear-gradient(top, #FC5E59, rgba(206, 5, 5, 0.78));
   background-image: -o-linear-gradient(top, #FC5E59, rgba(206, 5, 5, 0.78));
-  border-radius: 0 0 14px 14px;
+  border-radius: 0 0 6px 6px;
   box-shadow: 1px 1px 9px rgba(0,0,0,.12);
   color: white;
   font-family: 'Open Sans';
   font-size: 16px;
+  font-weight: 300;
   padding: 44px 34px 60px;
   position: absolute;
   right: 10%;
   top: 0;
-  font-weight: 300;
-  z-index: 3;
+  text-transform: uppercase;
   text-shadow: 0 0 4px rgba(0,0,0,.2);
   transition: padding 0.2s ease;
+  z-index: 3;
 }
 
-  .store-link:hover {
+  .store-link:hover,
+  .store-link.active {
     box-shadow: 1px 1px 6px rgba(0,0,0,.2);
     color: white;
-    padding: 44px 34px 80px;
+    padding: 50px 34px 80px;
     text-decoration: none;
     text-shadow: 0 0 4px rgba(0,0,0,.2);
   }
 
 
+
+
+
+
+
+
+
+
+
+
+/*  FOOTER  */
+
 .footer {
-  padding-bottom: 14px;
-  height: 38px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .footer-list {
-  margin: 0 8%;
-  float: right;
+  text-align: right;
+}
+
+.footer-list a {
+    color: #ccc;
 }
 
 .footer-list a li {
@@ -131,9 +169,8 @@ body {
 }
 
 .footer-list a li i {
-  color: #aaa;
-  font-size: 26px;
-  margin-right: 8px;
+  font-size: 22px;
+  margin-right: 6px;
 }
 
 .footer-list a li span {
@@ -142,12 +179,88 @@ body {
   margin-right: 8px;
   vertical-align: top;
   position: relative;
-  top: 4px;
+  top: 1px;
 }
 
 .footer-list a:hover {
-  color: #999;
+  color: #777;
+  cursor: pointer;
 }
 
 
 
+
+
+
+
+
+
+/*  COLORS  */
+
+.arabic-color {
+  color: #D8B528 !important;
+}
+.french-color {
+  color: #BD9AC8 !important;
+}
+.german-color {
+  color: #60C2DD !important;
+}
+.hebrew-color {
+  color: #0423DC !important;
+}
+.italian-color {
+  color: #69BD45 !important;
+}
+.mandarin-color {
+  color: #ED4344 !important;
+}
+.portuguese-color {
+  color: #A44041 !important;
+}
+.saspanish-color {
+  color: #65C3A4 !important;
+}
+.euspanish-color {
+  color: #F39263 !important;
+}
+
+.store-button {
+  border: none;
+  color: white;
+  float: none;
+  padding: 6px;
+}
+
+.store-button:hover {
+  box-shadow: 1px 1px 4px rgba(0,0,0,.1) inset;
+  padding: 6px 8px;
+}
+
+.arabic-button {
+  background-color: #D8B528 !important;
+}
+.french-button {
+  background-color: #BD9AC8 !important;
+}
+.german-button {
+  background-color: #60C2DD !important;
+}
+.hebrew-button {
+  background-color: #0423DC !important;
+}
+.italian-button {
+  background-color: #69BD45 !important;
+}
+.mandarin-button {
+  background-color: #ED4344 !important;
+}
+.portuguese-button {
+  background-color: #A44041 !important;
+}
+.saspanish-button {
+  background-color: #65C3A4 !important;
+}
+.euspanish-button {
+  background-color: #F39263 !important;
+}
