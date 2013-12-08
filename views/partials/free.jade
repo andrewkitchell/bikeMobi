@@ -1,22 +1,24 @@
 div.hero-box
-	img.hero(src='/images/mongolia.png');
-	h2 Every student should be able to say "Hello" to those they meet
+ img.hero-image(src="/images/road_crop_no_arrow.png")
+ img.guide-zoom(src="/images/guide-close-up-sepia.png")
+
+ h2 Every student should be able to say <span>'Hello'</span> to those they meet
 
 div
-	div.free-intro
-		p If you are a student and need a language guide for your travels, we want to help!
-		p Simply write a short story (below) about an adventure you might have if you say "hello"
-			| to people you meet during your adventures.
-		p We'll ship you any guide you choose.
+ div.free-intro
+  p 30 WORDS began as a tool to help our students interact with anyone they met.
+  p We still support the idea that all student travelers should be able to talk to those they meet.
+  p If you are a student and need a language guide for your travels, we want to help!
+  p Simply write a short story (below) aboutwhat might happen if you say "hello"
+   | to people you meet.
+  p We'll ship you any guide you choose.
 
-	div.write-here-message Write your story here:
-	textarea.story-box(placeholder="eg. We had never tasted anything quite like it.")
+  div.write-here-message Write your story here:
+  textarea.story-box(placeholder="eg. We had never tasted anything quite like it.")
 
-	//- div.modal-area(ng-controller="ModalDemoCtrl")
-	#myModal.modal.fade
-		.modal-dialog
-			.modal-header Excellent!
-			.modal-body Now, add a bit of info, and we'll ship you a guide.
-			//- a.btn.btn-primary.donate-button(target="_blank", href="https://donatenow.networkforgood.org/1442843") Donate Now
+  #myModal.modal.fade
+   .modal-dialog
+    .modal-header Excellent!
+    .modal-body Now, add a bit of info, and we'll ship you a guide.
 
-	button.free-button(data-toggle="modal", data-target="#myModal") My Masterpiece is Finished!
+ button.free-button(data-toggle="modal", data-target="#myModal") My Masterpiece is Finished!

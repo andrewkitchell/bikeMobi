@@ -191,11 +191,11 @@ angular.module('myApp.controllers', []).
         'author': 'Paul K, Greensburg, PA'
       },
       {
-        'quote': "Best Proof That Good Things Come in Small Packages",
+        'quote': "Best proof that good things come in small packages.",
         'author': "Paul Eisenberg, Fox News"
       },
       {
-        'quote': "30 WORDS ultra-minimalist approach is too smart & well thought out to leave at home",
+        'quote': "30 WORDS ultra-minimalist approach is too smart & well thought out to leave at home.",
         'author': "Mike Richards, Vagabondish"
       },
       {
@@ -245,37 +245,37 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
       {
         'src': "/images/guideCovers/german.png",
         'hello': 'Guten Tag!',
-        'transliteration': 'transliteration',
+        'transliteration': 'GOOT·en tahk',
         'language': 'German'
       },
       {
         'src': "/images/guideCovers/french.png",
         'hello': 'Bonjour!',
-        'transliteration': 'transliteration',
+        'transliteration': 'bohN·Zoor',
         'language': 'French'
       },
       {
         'src': "/images/guideCovers/mandarin.png",
-        'hello': 'Nee Hao!',
-        'transliteration': 'transliteration',
+        'hello': '你好!',
+        'transliteration': 'Nĕe·Hăo!',
         'language': 'Mandarin'
       },
       {
         'src': "/images/guideCovers/arabic.png",
-        'hello': 'Shalom!',
-        'transliteration': 'transliteration',
+        'hello': 'أهلا و سهلاً',
+        'transliteration': 'AH·lahn wa SAH·lahn',
         'language': 'Arabic'
       },
       {
         'src': "/images/guideCovers/italian.png",
-        'hello': 'Chao!',
-        'transliteration': 'transliteration',
+        'hello': 'Buon giorno!',
+        'transliteration': 'bwon JOR·no',
         'language': 'Italian'
       },
       {
         'src': "/images/guideCovers/brazilian.png",
-        'hello': 'Chao!',
-        'transliteration': 'transliteration',
+        'hello': 'Oi / Olá!',
+        'transliteration': 'oy / OH·la',
         'language': 'Brazilian'
       }
     ];

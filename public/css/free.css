@@ -1,23 +1,44 @@
 /* app css stylesheet */
 
-.hero-box {
-  position: relative;
+.hero-image {
+  left: 0;
+  margin: 0px auto;
+  min-height: 100%;
+  padding-top: 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
 }
 
-.hero {
-  margin-top: 0;
+.hero-box {
+  height: 540px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.guide-zoom {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 340px;
 }
 
 .hero-box h2 {
-  position: absolute;
   bottom: 20px;
-  width: 52%;
-  left: 20%;
   color: white;
   font-size: 40px;
+  font-weight: 400;
   line-height: 50px;
-  text-shadow: 1px 1px 3px black;
-  font-weight: 600;
+  position: absolute;
+  width: 52%;
+  margin-left: 20%;
+  background-color: rgba(0,0,0,.1);
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+  padding: 14px 28px;
 }
 
 .free-intro {
@@ -51,7 +72,7 @@
   color: #FC5E59;
   font-size: 26px;
   font-weight: 100;
-  margin: 20px 0 0px 20%;
+  margin: 50px 0 0 0;
 }
 
 .story-box {
@@ -63,11 +84,11 @@
   font-family: 'Open Sans';
   font-weight: 200;
   padding: 20px;
-  width: 60%;
+  width: 100%;
   border-radius: -1px;
   min-height: 400px;
   z-index: 10;
-  margin: 30px 20% 15px;
+  margin: 30px 0 15px;
   display: inline-block;
   vertical-align: top;
 }

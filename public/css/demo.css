@@ -1,9 +1,10 @@
 /* app css stylesheet */
 
-.hero {
+.hero-image {
 	position: absolute;
-	top: 80px;
-	min-height: 540px;
+	top: 0;
+	margin: 0px auto;
+	min-height: 590px;
 	width: 100%;
 	left: 0;
 	z-index: 0;
@@ -11,24 +12,23 @@
 }
 
 .hero-container {
-	margin: 120px auto 10px;
-	height: 440px;
+	margin: 0;
+	position: relative;
+	height: 590px;
+	padding-top: 100px;
 	text-align: center;
-	width: 92%;
-}
-
-.hero-image {
-	margin: 20px auto;
-  	width: 80%;
+	width: 100%;
 }
 
 .guide-zoom {
 	position: absolute;
-	right: 12%;
-	top: -52px;
+	left: 20%;
+	bottom: 0px;
+	width: 500px;
 }
 
 .demo-box {
+	margin-top: 15px;
 	position: relative;
 }
 
@@ -145,21 +145,22 @@
 }
 
 .below-title {
-  margin: 40px 0;
+  margin: 60px 0;
   text-align: center;
   width: 100%;
 }
 
 .below-title h1 {
-  color: #555;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 34px;
+  	color: #555;
+	font-size: 3.2em;
+	font-weight: 400;
+	line-height: 56px;
+	margin: 20px auto;
+	width: 70%;
 }
 
 .feature-box {
-  border-top: 1px solid #eee;
-  padding: 40px 0;
+  padding: 60px 0;
   position: relative;
 }
 
@@ -182,11 +183,13 @@
   width: 60%;
 }
 
+.feature-box-write-up.final-feature {
+	width: 100%;
+}
+
 .feature-box-write-up.float-right {
   text-align: right;
-  position: absolute;
   right: 0;
-  top: 40px;
 }
 
 .feature-box-write-up.float-right div {
@@ -194,18 +197,18 @@
 }
 
 .feature-box-write-up div {
-  font-size: 16px;
-  line-height: 25px;
-  margin-top: 18px;
-  width: 90%;
-  color: #777;
+  font-size: 20px;
+	line-height: 32px;
+	margin-top: 18px;
+	width: 90%;
+	color: #777;
+	font-weight: 300;
 }
 
 .feature-box img {
   display: inline-block;
   max-width: 35%;
   vertical-align: middle;
-  padding: 30px 0 0;
 }
 
 .feature-box:last-of-type {
@@ -227,3 +230,22 @@
 		background-color: #40B2CD;
 		color: white;
 	}
+
+.portable-image {
+	/*border-radius: 50%;*/
+}
+
+.focused-content-image {
+	border-radius: 50%;
+}
+
+.afforable-image {
+	display: inline-block;
+	max-width: 35%;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+.upcyclable-image {
+	border-radius: 50%;
+}

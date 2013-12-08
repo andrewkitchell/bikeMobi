@@ -8,28 +8,28 @@
 }
 
 .title {
-  font-size: 55px;
-  line-height: 50px;
-  margin-bottom: 10px;
+  font-size: 64px;
+  line-height: 54px;
+  margin-bottom: 18px;
   font-weight: 600;
   text-shadow: -1px 1px 1px rgb(255, 255, 255);
   color: #444;
 }
 
 .subtitle {
-  color: #666;
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 65px;
-  text-shadow: -1px 1px 1px rgb(255, 255, 255);
-  width: 40%;
+  color: #888;
+  font-family: 'Rouge Script';
+  font-size: 30px;
+  font-weight: 400;
   line-height: 24px;
-  margin: 0 auto;
+  margin: 0 auto 15px;
+  text-shadow: -1px 1px 1px rgb(255, 255, 255);
+  width: 60%;
 }
 
 .hero-container {
-  min-height: 590px;
-  padding-top: 145px;
+  min-height: 620px;
+  padding-top: 205px;
   position: relative;
 }
 
@@ -43,12 +43,13 @@
 }
 
 .hero-content {
+  bottom: 0;
   margin-left: 10%;
   position: absolute;
   text-align: center;
   width: 80%;
+  padding-top: 180px;
   overflow: hidden;
-  height: 500px;
 }
 
 .demo-image {
@@ -85,8 +86,6 @@
   position:relative;
   height: 320px;
   margin: 0;
-  top: 31px;
-  bottom:0;
   overflow:hidden;
   -webkit-transition: all 0.2s;
 }
@@ -148,7 +147,7 @@
 .hello,
 .hello-transliteration {
   margin-left: 72%;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 0px 0px 24px black;
   color: white;
   z-index: 10;
 }
@@ -162,8 +161,8 @@
 
 .hello-transliteration {
   position: absolute;
-  top: 195px;
-  font-size: 22px;
+  top: 190px;
+  font-size: 20px;
   font-weight: 300;
 }
 
@@ -183,12 +182,13 @@
 .languages-in-print {
   background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
   margin: 0;
-  padding: 15px 18% 15px;
+  padding: 22px 18%;
   text-align: center;
   width: 100%;
 }
 
 .languages-in-print p {
+  font-size: 18px;
   text-transform: uppercase;
 }
 

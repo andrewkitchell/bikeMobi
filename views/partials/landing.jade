@@ -8,11 +8,14 @@ block css
   h5.subtitle Language Guides for Adventurous Travelers
 
   ul#slides(ng-controller="LandingSlideshowCtrl")
+    li.slide
+      a(href="/demo")
+        img.guide-zoom(src="/images/open-in-hands.png", ng-cloak)
     li.slide(ng-repeat="image in images", ng-class="{ active : image.isActive }")
       a(href="/demo")
-        img.demo-image(src="{{ image.src }}", class="{{image.language}}")
+        img.demo-image(src="{{ image.src }}", class="{{image.language}}", ng-cloak)
         div.hello {{image.hello}}
-        div.hello-transliteration {{image.transliteration}}
+        //- div.hello-transliteration {{image.transliteration}}
 
 ul.languages-in-print
   p 9 Languages in print
@@ -23,7 +26,7 @@ ul.languages-in-print
 
 div.our-mission
   div.our-mission-header
-    img.guide-open(src="/images/guideOpened.png")
+    img.guide-open(src="/images/guide-zoom-accordion.png")
     h1 Langauge Guides: Re-Imagined
     h3 Portable <i class="fa fa-circle"></i> Focused <i class="fa fa-circle"></i> Durable
   p We designed 30 WORDS to help travelers connect to people they meet.
@@ -34,7 +37,7 @@ div.our-mission
   p When you travel with 30 WORDS, expect doors to open, and your adventures to top
     | what you imagined possible before you left home.
   p Happy Travels,
-  img(src="/images/signatures.png")
+  p Erin, Andrew & Will
   p.signature-title - co-creators of 30 WORDS
 
   //- div.button-box
@@ -54,3 +57,5 @@ ul.as-seen-in
     a.logo-item.vagabonish-logo(href="")
   li
     a.logo-item.goBackpacking-logo(href="")
+
+img.bottom-landing-image(src="/images/cover-and-guide.png")

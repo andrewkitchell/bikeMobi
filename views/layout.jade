@@ -6,37 +6,31 @@ html(ng-app="myApp")
     meta(charset='utf8')
     base(href='/')
     title 30WORDS
-    //- script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js")
-    <script type="text/javascript" src="//use.typekit.net/wyu7lul.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     script(src='http://code.jquery.com/jquery-2.0.3.js')
     script(src="https://checkout.stripe.com/checkout.js")
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
-    //- link(rel='stylesheet', href='/css/bootstrap-responsive.css')
-    //- link(rel='stylesheet', href='/css/bootstrap.css')
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Open+Sans+Condensed:300', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Rouge+Script', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/app.css')
     link(rel='stylesheet', href='/css/free.css')
     link(rel='stylesheet', href='/css/store.css')
-    //- link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/animate.css/2.0/animate.min.css")
-    //- link(ng-repeat="stylesheet in stylesheets", ng-href="{{stylesheet.href}}", type="{{stylesheet.type}}", rel="stylesheet")
-  body
+
+  body(ng-cloak)
 
     navlist(ng-controller="NavController")
 
     block body
 
-    div.footer
-        ul.footer-list
-            a
-                li
-                    span hello@30words.com
-                    i.fa.fa-envelope
-            a
-                li
-                    i.fa.fa-facebook-square
-            a
-                li
-                    i.fa.fa-twitter-square
+     div.footer(ng-cloak)
+      ul.footer-list
+       a
+        li
+         span hello@30words.com
+         i.fa.fa-envelope
+       a
+        li
+         i.fa.fa-facebook-square
+       a
+        li
+         i.fa.fa-twitter-square

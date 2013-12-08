@@ -2,78 +2,65 @@ block css
  link(rel='stylesheet', href='/css/demo.css')
 
 .hero-container(ng-controller="DemoSlideshowCtrl")
- img.hero(src="/images/road_crop_no_arrow.png")
+ img.hero-image(src="/images/road_crop_no_arrow.png")
  ul#slides
   li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }")
    h2.quote "{{ quote.quote }}"
    h5.quote-author - {{ quote.author }}
-
- div.demo-box
-  img.hero-image(src="/images/guideOpened.png")
-  img.guide-zoom(src="/images/guide-zoom.png")
-  div.info-blob.waterproof 100% Waterproof
-  div.info-blob.tearproof Tear Resistant
-  div.info-blob.passport Passport-Sized
-  div.info-blob.upcyclable 100% upcyclable
-  div.info-blob.access Focused Content
-  div.info-blob.nine-hundred 900 words & phrases
+ img.guide-zoom(src="/images/open-in-hands.png")
 
 
 div.below-the-fold
-
   div.below-title
-    //- img.hero-image(src="/images/guideOpened.png", width="40%")
-    h1 Designed to help Travelers "Start the Conversation"
+    h1 Language Guides that help you <br> 'Start the Conversation'
 
   .feature-box
     div.feature-box-write-up
       h2 Exceptionally Portable
       div We designed 30 WORDS so travelers could carry it everywhere.  <br><br>
         | You never know when you'll feel inspired
-        | to strike up a conversation, so 30 WORDS is passport-sized and ultra-lightweight, so you can carry it
+        | to strike up a conversation, so 30 WORDS is passport-sized and ultra-lightweight, so you can slide it
         | easily in any pocket.
-    img(src='/images/guideOpenedTags.png')
+    img.portable-image(src='/images/guide-plus-passport.png')
 
   .feature-box
-    img.image-left(src='/images/guide-zoom.png')
+    img.image-left.focused-content-image(src='/images/rotated-cool-cropped.png')
     div.feature-box-write-up.float-right
       h2 Focused Content
-      div We believe you only need a few words to start a conversation.  Honestly, most travelers would
-        | be well served by speaking even 30 words. <br><br>
+      div We believe you only need a few words to start a conversation.  (Most travelers would
+        | be well served by speaking ~30 words) <br><br>
         | Our guides give you rapid access to 900 words and phrases,
         | more than you'll need for almost any adventure.
 
   .feature-box
     div.feature-box-write-up
       h2 Ultra-Durable
-      div Why build a durable language guide?  30 WORDS travelers are folks who go for night swims,
+      div 30 WORDS users are folks who go for night swims,
         | explore rainy jungles, and engage in conversations lively enough to spill a coffee. <br><br>
         | Therefore, we made 30 WORDS waterproof & tear resistant, so you'll always feel safe slipping
         | your guide into your pocket, swimsuit, or jacket.
-    img(src='/images/guide-zoom.png')
+    img(src='/images/cover-and-guide.png')
 
   .feature-box
-    img.image-left(src='/images/six-covers.jpg')
+    img.image-left.afforable-image(src='/images/open-in-hands.png')
     div.feature-box-write-up.float-right
       h2 Affordable & Practical
-      div Yes, word has reached us that smartphones are pretty popular these days.
+      div Word has reached us that smartphones are pretty popular these days.
         | In developing 30 WORDS, we wanted to build a guide that you'd feel comfortable using
         | in a crowded market, on the beach, or in the rain. </br></br>
 
-        | Furthermore, we still believe that you should not need to connect to a wireless signal
-        | or power adapter to connect with people. </br></br>
-
-        | Lastly, try to pull out your iPhone and ask for 20% off as you bargain at the local market.
+        | Furthermore, we still believe that you connecting with people should not rely
+        | on a wireless signal or a power outlet.
 
   .feature-box
     div.feature-box-write-up
-      h2 100% Upcyclable
-      div We print on a material that is waterproof, tear-resistant, and 100% upcyclable.
-      | In fact, we only went to print once we found a material that we loved. <br><br>
-      | We're happy to talk paper all day - write us if you have any questions!
-    img(src='/images/guideOpened.png')
+      h2 100% Recyclable & Upcyclable
+      div 30 WORDS are printed on a material that is and 100% upcyclable & non-toxic.
+       | In fact, we only went to print once we found a material that we loved. <br><br>
+       | We're happy to talk paper all day - write us if you have any questions!
+    img.upcyclable-image(src='/images/guide-with-cover-in-background.png')
 
   .feature-box
-    div.feature-box-write-up
-      h2 And more...
+    div.feature-box-write-up.final-feature
+      h2 Ready to 'Start the Conversation'?
       a.big-button(href="/store") Check out our Store
