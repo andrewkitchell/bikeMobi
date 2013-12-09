@@ -5,8 +5,8 @@ block css
  img.hero-image(src="/images/road_crop_no_arrow.png")
  ul#slides
   li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }")
-   h2.quote "{{ quote.quote }}"
-   h5.quote-author - {{ quote.author }}
+   h2.quote(ng-cloak) "{{ quote.quote }}"
+   h5.quote-author(ng-cloak) - {{ quote.author }}
  img.guide-zoom(src="/images/open-in-hands.png")
 
 

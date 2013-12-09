@@ -14,12 +14,13 @@ block css
     li.slide(ng-repeat="image in images", ng-class="{ active : image.isActive }")
       a(href="/demo")
         img.demo-image(src="{{ image.src }}", class="{{image.language}}", ng-cloak)
-        div.hello {{image.hello}}
-        //- div.hello-transliteration {{image.transliteration}}
+        div.hello-box
+          p.hello {{image.hello}}
+          p.hello-transliteration {{image.transliteration}}
 
 ul.languages-in-print
   p 9 Languages in print
-  li(ng-repeat="guide in guides", class="{{ guide.language }}")
+  li(ng-repeat="guide in guides")
     a(href="/store/{{guide.langauge}}")
       i.fa.fa-dot-circle-o
       | {{ guide.language }}
@@ -37,12 +38,7 @@ div.our-mission
   p When you travel with 30 WORDS, expect doors to open, and your adventures to top
     | what you imagined possible before you left home.
   p Happy Travels,
-  p Erin, Andrew & Will
-  p.signature-title - co-creators of 30 WORDS
-
-  //- div.button-box
-  //-   a(href="/demo") Demo
-  //-   a(href="/store") Store
+  p 30 WORDS
 
 
 ul.as-seen-in

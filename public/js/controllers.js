@@ -32,14 +32,13 @@ angular.module('myApp.controllers', []).
 
 
 
-  // controller('NavController', function($scope, $location, $route) {
+  controller('NavController', function($scope, $location, $route) {
 
-  //   // $scope.reloadCtrl = function(){
-  //   //   $route.reload();
-  //   // };
+    $scope.reloadCtrl = function(){
+      $route.reload();
+    };
 
-
-  // }).
+  }).
 
 
 
@@ -205,7 +204,7 @@ angular.module('myApp.controllers', []).
       },
       {
         'quote': "30 WORDS ultra-minimalist approach is too smart & well thought out to leave at home.",
-        'author': "Mike Richards, Vagabondish"
+        'author': "Mike Richards, Vagabondish.com"
       },
       {
         'quote': 'A must have.',
@@ -230,7 +229,7 @@ angular.module('myApp.controllers', []).
                     $scope.images.push( $scope.images.shift() );
             */
 
-            $timeout( $scope.advanceSlide, 6000 );
+            $timeout( $scope.advanceSlide, 4000 );
     };
 
     // Advance slides

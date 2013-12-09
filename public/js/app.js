@@ -2,14 +2,12 @@
 
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'ngAnimate',
   'ngSanitize',
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.animations'
-  // 'angular.css.injector'
 ]).
 
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

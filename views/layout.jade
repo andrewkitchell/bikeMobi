@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 doctype 5
 
-html(ng-app="myApp")
+html(ng-app="myApp", ng-cloak)
   head
     meta(charset='utf8')
     base(href='/')
@@ -16,25 +16,9 @@ html(ng-app="myApp")
     link(rel='stylesheet', href='/css/free.css')
     link(rel='stylesheet', href='/css/store.css')
 
-  body
+  body(ng-cloak)
 
-    nav.nav-list
-     a.logo-box(href='/', ng-click="reloadCtrl()")
-      img.logo(src="/images/logo_30words.png")
-
-     ul
-      li
-       a(href='/') Home
-      li
-       a(href='demo', ng-class="{active:isActive('/demo')}") Design & Reviews
-      li
-       a(href='free', ng-class="{active:isActive('/free')}") Students
-      li
-       a(href='blog', ng-class="{active:isActive('/blog')}", ng-click="reloadCtrl()") Blog
-      li
-       a(href='store', ng-class="{active:isActive('/store')}", ng-click="reloadCtrl()") Store
-
-     a.store-link(href='store', ng-class="{active:isActive('/store')}") Store
+    navlist
 
     block body
 

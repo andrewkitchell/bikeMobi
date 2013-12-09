@@ -16,7 +16,7 @@
 .hero-box {
   margin: 0;
   position: relative;
-  height: 590px;
+  height: 500px;
   width: 100%;
 }
 
@@ -304,7 +304,7 @@ button.add-to-cart {
 	border-radius: 4px;
 	box-shadow: 0 5px 8px rgba(0,0,0,.3);
 	display: inline-block;
-	width: 230px;
+	width: 220px;
 }
 
 .guide-cover:hover {

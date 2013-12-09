@@ -13,18 +13,19 @@
 
 .hero-container {
 	margin: 0;
-	position: relative;
 	height: 590px;
+	overflow: hidden;
 	padding-top: 100px;
+	position: relative;
 	text-align: center;
 	width: 100%;
 }
 
 .guide-zoom {
-	position: absolute;
-	left: 20%;
 	bottom: 0px;
-	width: 500px;
+	left: 20%;
+	position: absolute;
+	width: 480px;
 }
 
 .demo-box {
@@ -113,14 +114,16 @@
 	width:100%;
 	height:100%;
 	opacity:0;
+	visibility: hidden;
 	-webkit-transform: translate3d(0, 100%, 0);
-	-webkit-transition: all 1.5s;
+	-webkit-transition: all 1.5s ease;
 }
 
 .slide.active {
 	top:0;
 	opacity:1;
 	-webkit-transform: translate3d(0,0,0);
+	visibility: visible;
 }
 
 

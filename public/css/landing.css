@@ -7,26 +7,6 @@
   top: -2px;
 }
 
-.title {
-  font-size: 64px;
-  line-height: 54px;
-  margin-bottom: 18px;
-  font-weight: 600;
-  text-shadow: -1px 1px 1px rgb(255, 255, 255);
-  color: #444;
-}
-
-.subtitle {
-  color: #888;
-  font-family: 'Rouge Script';
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 24px;
-  margin: 0 auto 15px;
-  text-shadow: -1px 1px 1px rgb(255, 255, 255);
-  width: 60%;
-}
-
 .hero-container {
   min-height: 620px;
   padding-top: 205px;
@@ -44,24 +24,44 @@
 
 .hero-content {
   bottom: 0;
-  margin-left: 10%;
+  margin-left: 15%;
   position: absolute;
-  text-align: center;
-  width: 80%;
+  width: 74%;
   padding-top: 180px;
   overflow: hidden;
 }
 
-.demo-image {
-  width: 315px;
-  margin-bottom: 30px;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 1px 1px 20px rgba(0,0,0,.4);
+.title {
+  font-size: 64px;
+  line-height: 54px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  text-shadow: -1px 1px 1px rgb(255, 255, 255);
+  color: #444;
 }
 
-.demo-image:hover {
-  box-shadow: 1px 1px 25px rgba(0,0,0,.7);
+.subtitle {
+  color: #555;
+  font-family: 'Rouge Script';
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 10px 0 15px 5px;
+  text-shadow: -1px 1px 1px rgb(255, 255, 255);
+  width: 60%;
 }
+
+.demo-image {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.39);
+  margin-bottom: 30px;
+  margin-left: 16px;
+  width: 315px;
+}
+
+  .demo-image:hover {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.65);
+  }
 
 
 
@@ -139,29 +139,29 @@
 }
 
 .French {
-  transform:rotate(0deg);
-  -ms-transform:rotate(0deg); /* IE 9 */
-  -webkit-transform:rotate(0deg); /* Safari and Chrome */
+  transform:rotate(-1deg);
+  -ms-transform:rotate(-1deg); /* IE 9 */
+  -webkit-transform:rotate(-1deg); /* Safari and Chrome */
+}
+
+.hello-box {
+  display: inline-block;
+  margin-left: 8%;
 }
 
 .hello,
 .hello-transliteration {
-  margin-left: 72%;
-  text-shadow: 0px 0px 24px black;
   color: white;
+  text-shadow: 0px 0px 24px black;
   z-index: 10;
 }
 
 .hello {
   font-family: 'Rouge Script';
-  position: absolute;
-  top: 140px;
   font-size: 70px;
 }
 
 .hello-transliteration {
-  position: absolute;
-  top: 190px;
   font-size: 20px;
   font-weight: 300;
 }
@@ -182,7 +182,7 @@
 .languages-in-print {
   background: #eae8e1 url(https://gethelium.com/static/images/shared/grain.gif) left bottom repeat;
   margin: 0;
-  padding: 22px 18%;
+  padding: 32px 18%;
   text-align: center;
   width: 100%;
 }
@@ -194,13 +194,14 @@
 
 .languages-in-print li {
   display: inline-block;
-  line-height: 26px;
+  line-height: 32px;
   margin: 0 25px;
   vertical-align: top;
 }
 
 .languages-in-print li a {
   color: #555;
+  font-size: 18px;
   font-weight: 300;
 }
 
