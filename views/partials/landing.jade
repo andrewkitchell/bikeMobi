@@ -19,7 +19,7 @@ block css
 
 ul.languages-in-print
   p 9 Languages in print
-  li(ng-repeat="guide in guides", ng-class="{{ guide.language | lowercase }}")
+  li(ng-repeat="guide in guides", class="{{ guide.language }}")
     a(href="/store/{{guide.langauge}}")
       i.fa.fa-dot-circle-o
       | {{ guide.language }}
@@ -57,5 +57,3 @@ ul.as-seen-in
     a.logo-item.vagabonish-logo(href="")
   li
     a.logo-item.goBackpacking-logo(href="")
-
-img.bottom-landing-image(src="/images/cover-and-guide.png")

@@ -3,7 +3,8 @@
 
 angular.module('myApp.controllers', []).
 
-  controller('AppCtrl', function($scope, $http, $route, $rootScope, $location, cssInjector) {
+
+  controller('AppCtrl', ['$scope', '$http', '$route', '$rootScope', '$location', function($scope, $http, $route, $rootScope, $location) {
 
     // cssInjector.setSinglePageMode(true);
 
@@ -19,21 +20,30 @@ angular.module('myApp.controllers', []).
     });
 
     $scope.reloadCtrl = function(){
-      console.log('reloading...');
+      alert('reloading...');
       $route.reload();
     };
-
-  }).
-
-  controller('NavController', function($scope, $location, $route) {
 
     $scope.isActive = function(route) {
         return route === $location.path();
     };
 
-  }).
+  }]).
 
-  controller('LandingCtrl', ['$scope', '$http', 'cssInjector', function($scope, $http, cssInjector) {
+
+
+  // controller('NavController', function($scope, $location, $route) {
+
+  //   // $scope.reloadCtrl = function(){
+  //   //   $route.reload();
+  //   // };
+
+
+  // }).
+
+
+
+  controller('LandingCtrl', ['$scope', '$http', function($scope, $http) {
 
     $http({
       method: 'GET',
@@ -52,10 +62,7 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('FreeCtrl', ['$scope', '$http', 'cssInjector', function($scope, $http, cssInjector) {
-
-    cssInjector.setSinglePageMode(true);
-    cssInjector.add("/css/free.css");
+  controller('FreeCtrl', ['$scope', '$http', function($scope, $http) {
 
     $http({
       method: 'GET',
@@ -74,7 +81,7 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('StoreCtrl', ['$scope', '$http', 'cssInjector', function($scope, $http, cssInjector) {
+  controller('StoreCtrl', ['$scope', '$http', function($scope, $http) {
 
     $http({
       method: 'GET',
@@ -136,11 +143,11 @@ angular.module('myApp.controllers', []).
             price: 1095
           });
         }
-    },
+    };
 
     $scope.removeItem = function(index) {
         $scope.invoice.items.splice(index, 1);
-    },
+    };
 
     $scope.totalCostForLocal = function() {
         var total = 0;
@@ -148,7 +155,7 @@ angular.module('myApp.controllers', []).
             total += item.qty * 10.95;
         });
         return total;
-    },
+    };
 
     $scope.totalCostForStripe = function() {
         var total = 0;
@@ -156,7 +163,7 @@ angular.module('myApp.controllers', []).
             total += item.qty * 1095;
         });
         return total;
-    },
+    };
 
     $scope.totalNumberInCart = function() {
         var total = 0;
@@ -164,7 +171,7 @@ angular.module('myApp.controllers', []).
             total += item.qty;
         });
         return total;
-      };
+    };
 
   }]).
 
@@ -181,7 +188,9 @@ angular.module('myApp.controllers', []).
     };
   }]).
 
-  controller('DemoSlideshowCtrl', function ( $scope, $timeout, $route, $location ) {
+
+
+  controller('DemoCtrl', ['$scope', '$timeout', '$route', '$location', function ( $scope, $timeout, $route, $location ) {
 
     $scope.slideCurrent = 0;
 
@@ -235,7 +244,10 @@ angular.module('myApp.controllers', []).
             // Activate the next slide
             $scope.quotes[ $scope.slideCurrent ].isActive = true;
     };
-  }).
+
+  }]).
+
+
 
 controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $location ) {
 
@@ -281,31 +293,31 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
     ];
 
     $scope.advanceSlide = function() {
-            // Method 1
-            // Use a classname to highlight the current active slide
-            if ( angular.isDefined( $scope.images ) && $scope.images.length )
-                    $scope.makeActiveSlide( $scope.slideCurrent + 1 );
+      // Method 1
+      // Use a classname to highlight the current active slide
+      if ( angular.isDefined( $scope.images ) && $scope.images.length )
+              $scope.makeActiveSlide( $scope.slideCurrent + 1 );
 
-            /*
-            // Method 2
-            // Just flush the array elements around
-            if ( angular.isDefined( $scope.images ) )
-                    $scope.images.push( $scope.images.shift() );
-            */
+      /*
+      // Method 2
+      // Just flush the array elements around
+      if ( angular.isDefined( $scope.images ) )
+              $scope.images.push( $scope.images.shift() );
+      */
 
-            $timeout( $scope.advanceSlide, 6000 );
+      $timeout( $scope.advanceSlide, 6000 );
     };
 
     // Advance slides
     $timeout( $scope.advanceSlide );
 
     $scope.makeActiveSlide = function( index ) {
-            // Inactivate the previous slide
-            delete $scope.images[ $scope.slideCurrent ].isActive;
-            // Select the next slide
-            $scope.slideCurrent = ( index ) % $scope.images.length;
-            // Activate the next slide
-            $scope.images[ $scope.slideCurrent ].isActive = true;
+      // Inactivate the previous slide
+      delete $scope.images[ $scope.slideCurrent ].isActive;
+      // Select the next slide
+      $scope.slideCurrent = ( index ) % $scope.images.length;
+      // Activate the next slide
+      $scope.images[ $scope.slideCurrent ].isActive = true;
     };
   }).
 
@@ -315,23 +327,20 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
   }).
   controller('BlogCtrl', function ($scope) {
     $scope.name = 'Blog';
-  }).
-  controller('DemoCtrl', function ($scope) {
-    $scope.name = 'Demo';
   });
 
-  var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+  // var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
 
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+  //   $scope.items = items;
+  //   $scope.selected = {
+  //     item: $scope.items[0]
+  //   };
 
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
+  //   $scope.ok = function () {
+  //     $modalInstance.close($scope.selected.item);
+  //   };
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-};
+  //   $scope.cancel = function () {
+  //     $modalInstance.dismiss('cancel');
+  //   };
+// };

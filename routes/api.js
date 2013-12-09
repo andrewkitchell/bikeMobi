@@ -7,14 +7,14 @@ exports.guides = function (req, res) {
     guides: {
       arabic: {
         css_style: 'arabic',
-        language: 'Arabic: Egyptian',
+        language: 'Arabic Egyptian',
         price: '$9.95',
         description: "You were warned that riding a camel could be very uncomfortable. Now, three days into your Saharan trek, you are so sore you can barely walk – let alone ride your cantankerous ungulate.  <br><br>Fortunately, 'May I have a pillow and some aspirin' is one of countless phrases you can easily create using the more than 800 useful words and phrases contained in 30 WORDS.",
         image: '/images/guideCovers/arabic.png'
       },
       portuguese: {
         css_style: 'portuguese',
-        language: 'Portuguese: Brazilian',
+        language: 'Portuguese Brazilian',
         price: '$9.95',
         description: 'After a night of Carnaval, you thought you had experienced Brazil’s wild side.  Dancing past midnight with costumed revelers, however, seems tame compared to navigating the Amazon in an afternoon rainstorm.   <br><br>Fortunately, 30 WORDS Language Guides are built to survive both dance parties and downpours.  With more than 800 words and phrases, whether you are inquiring about samba steps or survival techniques, 30 WORDS focused content will help you embrace your adventure.',
         image: 'images/guideCovers/brazilian.png'
@@ -56,14 +56,14 @@ exports.guides = function (req, res) {
       },
       spanish_EU: {
         css_style: 'euspanish',
-        language: 'Spanish: European',
+        language: 'Spanish European',
         price: '$9.95',
         description: 'You mentioned your interest in Flamenco dancing and now your first lesson is in full swing. Luckily, you dance more elegantly than you speak Spanish - at least this was true before you traveled with 30 WORDS. Now that you can find the words you need between spins, you can focus on more important matters - such as keeping pace with your instructor.',
         image: '/images/guideCovers/euspanish.png'
       },
       spanish_SA: {
         css_style: 'saspanish',
-        language: 'Spanish: South American',
+        language: 'Spanish South American',
         price: '$9.95',
         description: 'It would have been a good idea to negotiate the price of a llama before ascending to 8,000 feet.  <br><br>Now, resting high in the Andes, you face a difficult decision: To continue your journey you must either lighten your backpack, or empty your wallet. Open your feather-light 30 WORDS however, and new options emerge. Why not bargain for one day’s use of a mercurial llama, or ask a local about a shortcut?  <br><br>Whether you choose to push to the summit, or return home, expand your possibilities with 30 WORDS.',
         image: '/images/guideCovers/saspanish.png'

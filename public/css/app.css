@@ -92,7 +92,7 @@ body {
 
 .nav-list ul li a:hover,
 .nav-list ul li a.active {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .store-link {

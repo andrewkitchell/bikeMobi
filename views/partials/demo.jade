@@ -1,7 +1,7 @@
 block css
  link(rel='stylesheet', href='/css/demo.css')
 
-.hero-container(ng-controller="DemoSlideshowCtrl")
+.hero-container
  img.hero-image(src="/images/road_crop_no_arrow.png")
  ul#slides
   li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }")

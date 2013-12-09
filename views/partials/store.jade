@@ -1,4 +1,4 @@
-div.main(ng-controller="ShoppingCartCtrl")
+div
   div.hero-container
     img.hero-image(src="/images/road_crop_no_arrow.png")
     img.guide-zoom(src="/images/guide-close-up-sepia.png")
@@ -11,73 +11,71 @@ div.main(ng-controller="ShoppingCartCtrl")
         li Durable: Waterproof & Tear-proof
         li 100% recyclable
 
-  div
-    div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")
+  //- div(ng-controller="ShoppingCartCtrl")
+  //-   div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")
 
-      div.total
-        img.total-logo(src="/images/logo_30words_store.png")
-        p(ng-pluralize, count="totalNumberInCart()", when="{'0': 'No guides in your cart', 'one': '1 guide in your cart', 'other': '{} guides in your cart'}")
-        p Your total is {{ totalCostForLocal() | currency:"$" }}
+  //-     div.total
+  //-       img.total-logo(src="/images/logo_30words_store.png")
+  //-       p(ng-pluralize, count="totalNumberInCart()", when="{'0': 'No guides in your cart', 'one': '1 guide in your cart', 'other': '{} guides in your cart'}")
+  //-       p Your total is {{ totalCostForLocal() | currency:"$" }}
 
-        button#customButton.stripe-button-el
-          span Place Order
-        span.bottom-braid
+  //-       button#customButton.stripe-button-el
+  //-         span Place Order
+  //-       span.bottom-braid
 
-        script
-          // this is the custom Stripe form, added by me
-          var handler = StripeCheckout.configure({
-          key: 'pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9',
-          image: '/images/stripe-logo.png',
-          token: function(token, args) {
-            // Use the token to create the charge with a server-side script.
-            }
-          });
-          document.getElementById('customButton').addEventListener('click', function(e) {
-          // Open Checkout with further options
-            var amount = $('#shopping-cart').attr("value");
-            var description = $('#shopping-cart').attr('data-head')
-            handler.open({
-              name: '30 WORDS',
-              description: description,
-              amount: amount
-            });
-            e.preventDefault();
-          })
+  //-       script.
+  //-         // this is the custom Stripe form, added by me
+  //-         var handler = StripeCheckout.configure({
+  //-         key: 'pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9',
+  //-         image: '/images/stripe-logo.png',
+  //-         token: function(token, args) {
+  //-           // Use the token to create the charge with a server-side script.
+  //-           }
+  //-         });
+  //-         document.getElementById('customButton').addEventListener('click', function(e) {
+  //-         // Open Checkout with further options
+  //-           var amount = $('#shopping-cart').attr("value");
+  //-           var description = $('#shopping-cart').attr('data-head')
+  //-           handler.open({
+  //-             name: '30 WORDS',
+  //-             description: description,
+  //-             amount: amount
+  //-           });
+  //-           //- e.preventDefault();
+  //-         })
 
-      div.all-languages-in-cart
-        div.guide-in-cart-box(ng-repeat='item in invoice.items', ng-animate=" 'animate' ")
-          div.guide-in-cart
-            i.fa.fa-times-circle-o(ng-click="removeItem($index)")
-            img(src='{{item.guide.image}}', width='80px')
-            div.guide-in-cart-details
-              p {{ item.guide.language }}
-              td
-                input.guide-quantity(type="number", ng-model="item.qty", ng-required, placeholder='1')
-      p.add-more Click another guide to add it to your cart.
+  //-     div.all-languages-in-cart
+  //-       div.guide-in-cart-box(ng-repeat='item in invoice.items')
+  //-         div.guide-in-cart
+  //-           i.fa.fa-times-circle-o(ng-click="removeItem($index)")
+  //-           img(ng-src='{{item.guide.image}}', width='80px')
+  //-           div.guide-in-cart-details
+  //-             p {{ item.guide.language }}
+  //-             td
+  //-               input.guide-quantity(type="number", ng-model="item.qty", ng-required, placeholder='1')
+  //-     p.add-more Click another guide to add it to your cart.
 
+  //-   div.all-guides(ng-class="{'thin-store': invoice.items.length}")
 
+  //-     div.shipping-details
+  //-       p Guides ship the day after you order, and cost $10.95 each.
+  //-       p Questions? Bulk Orders? <a href="mailto:hello@30words.com" target="_blank">hello@30words.com</a>
 
-    div.all-guides(ng-class="{'thin-store': invoice.items.length}")
+  //-     div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
+  //-       div.cover-box
+  //-         img.guide-cover(ng-src='{{guide.image}}', ng-click="addItem(guide)")
 
-      div.shipping-details
-        p Guides ship the day after you order, and cost $10.95 each.
-        p Questions? Bulk Orders? <a href="mailto:hello@30words.com" target="_blank">hello@30words.com</a>
+  //-       div.guide-text
+  //-         a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
+  //-         button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
+  //-         div.guide-description(ng-bind-html="guide.description")
 
-      div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
-        div.cover-box
-          img.guide-cover(ng-src='{{guide.image}}', ng-click="addItem(guide)")
+  //-     div.guide-box
+  //-       div.cover-box
+  //-         img.guide-cover(ng-src='/images/vietnamese-cover.png')
 
-        div.guide-text
-          a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
-          button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
-          div.guide-description(ng-bind-html="guide.description")
-
-      div.guide-box
-        div.cover-box
-          img.guide-cover(ng-src='/images/vietnamese-cover.png')
-
-        div.guide-text
-          a.guide-title Vietnamese
-          button.store-button.add-to-cart(class="vietnamese-button") Coming Soon!
+  //-       div.guide-text
+  //-         a.guide-title Vietnamese
+  //-         button.store-button.add-to-cart(class="vietnamese-button") Coming Soon!
 
 

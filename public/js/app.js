@@ -1,15 +1,15 @@
 // Declare app level module which depends on filters, and services
 
 var myApp = angular.module('myApp', [
-  "ngRoute",
+  'ngRoute',
   'ngAnimate',
   'ngSanitize',
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.animations',
-  'angular.css.injector'
+  'myApp.animations'
+  // 'angular.css.injector'
 ]).
 
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -36,11 +36,11 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     }).
     when('/store', {
       templateUrl: 'partials/store',
-      controller: 'StoreCtrl',
+      controller: 'StoreCtrl'
     }).
     when('/store/:guide', {
       templateUrl: 'partials/guide',
-      controller: 'GuideCtrl',
+      controller: 'GuideCtrl'
     }).
     otherwise({
       redirectTo: '/'
