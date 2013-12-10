@@ -6,8 +6,8 @@ var express = require('express'),
   routes = require('./routes'),
   api = require('./routes/api'),
   http = require('http'),
-  path = require('path');
-
+  path = require('path'),
+  nodemailer = require("nodemailer");
 
 var stripeApiKey = "pk_WK8kK7pQe0wBeHigrI9yGLEpqGqvs";
 var stripeApiKeyTesting = "9PrrkDKIT6vyetcQBbR1RY93eu9Npu8e";

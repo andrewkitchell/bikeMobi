@@ -6,11 +6,14 @@ var stripeApiKey = "pk_WK8kK7pQe0wBeHigrI9yGLEpqGqvs";
 var stripeApiKeyTesting = "9PrrkDKIT6vyetcQBbR1RY93eu9Npu8e";
 
 var stripe = require('stripe')(stripeApiKeyTesting);
+var nodemailer = require("nodemailer");
+
 
 
 exports.index = function(req, res){
   res.render('index');
 };
+
 
 
 exports.partials = function (req, res) {
@@ -19,9 +22,12 @@ exports.partials = function (req, res) {
 };
 
 
+
+
 exports.store = function(req, res){
   res.render('store');
 };
+
 
 
 exports.purchase = function(req, res) {
@@ -58,19 +64,36 @@ exports.purchase = function(req, res) {
 };
 
 
+
 exports.submit_story = function(req, res) {
-  console.log('in submit story');
   var name = req.body.name;
   var address = req.body.address;
   var email = req.body.email;
-  var language = req.body.guide.language;
+  var guide = req.body.guide;
+  var story = req.body.story;
 
-  stripe.charges.create({
-    amount: amount,
-    currency: "usd",
-    card: stripeToken, // obtained with Stripe.js
-    description: purchased_guides
-  }).then(function(res) {
-    console.log('yes, this works:: ' + res);
+  var transport = nodemailer.createTransport("SMTP", {
+    service: "Gmail",
+    auth: {
+        user: "akitchell@gmail.com",
+        pass: "99tallgiants"
+    }
   });
-}
+
+  var mailOptions = {
+      from: "30WORDS <andrew@30words.com>", // sender address
+      to: "akitchell@gmail.com", // list of receivers
+      subject: "Your Story", // Subject line
+      text: "Hello " + name, // plaintext body
+      html: "Thanks for submitting your story" + name // html body
+  };
+
+  transport.sendMail(mailOptions, function(error, response){
+      if(error){
+          console.log(error);
+      }else{
+          console.log("Message sent: " + response.message);
+      }
+  });
+
+};
