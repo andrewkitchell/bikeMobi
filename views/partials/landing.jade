@@ -5,7 +5,7 @@ block css
  img.hero-image(src="/images/road_crop_no_arrow.png")
  div.hero-content
   h1.title Meet 30 WORDS
-  h5.subtitle Language Guides for Adventurous Travelers
+  h5.subtitle And Say 'Hello' to Better Adventures
 
   ul#slides(ng-controller="LandingSlideshowCtrl")
     li.slide
@@ -15,8 +15,8 @@ block css
       a(href="/demo")
         img.demo-image(src="{{ image.src }}", class="{{image.language}}", ng-cloak)
         div.hello-box
-          p.hello {{image.hello}}
-          p.hello-transliteration {{image.transliteration}}
+          p.hello {{image.hello}}!
+          //- p.hello-transliteration {{image.transliteration}}
 
 ul.languages-in-print
   p 9 Languages in print
@@ -27,7 +27,6 @@ ul.languages-in-print
 
 div.our-mission
   div.our-mission-header
-    img.guide-open(src="/images/guide-zoom-accordion.png")
     h1 Langauge Guides: Re-Imagined
     h3 Portable <i class="fa fa-circle"></i> Focused <i class="fa fa-circle"></i> Durable
   p We designed 30 WORDS to help travelers connect to people they meet.
@@ -40,6 +39,33 @@ div.our-mission
   p Happy Travels,
   p 30 WORDS
 
+
+  .feature-box
+    div.feature-box-write-up
+      h2 Exceptionally Portable
+      div We designed 30 WORDS so travelers could carry it everywhere.  <br><br>
+        | You never know when you'll feel inspired
+        | to strike up a conversation, so 30 WORDS is passport-sized and ultra-lightweight, so you can slide it
+        | easily in any pocket.
+    img.portable-image(src='/images/guide-plus-passport.png')
+
+  .feature-box
+    img.image-left.focused-content-image(src='/images/rotated-cool-cropped.png')
+    div.feature-box-write-up.float-right
+      h2 Focused Content
+      div We believe you only need a few words to start a conversation.  (Most travelers would
+        | be well served by speaking ~30 words) <br><br>
+        | Our guides give you rapid access to 900 words and phrases,
+        | more than you'll need for almost any adventure.
+
+  .feature-box
+    div.feature-box-write-up
+      h2 Ultra-Durable
+      div 30 WORDS users are folks who go for night swims,
+        | explore rainy jungles, and engage in conversations lively enough to spill a coffee. <br><br>
+        | Therefore, we made 30 WORDS waterproof & tear resistant, so you'll always feel safe slipping
+        | your guide into your pocket, swimsuit, or jacket.
+    img.ultra-durable-image(src='/images/cover-and-guide.png')
 
 ul.as-seen-in
   div.as-seen-in-title As seen in:

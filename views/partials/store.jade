@@ -1,15 +1,8 @@
 div
   div.hero-container
-    img.hero-image(src="/images/road_crop_no_arrow.png")
-    img.guide-zoom(src="/images/guide-close-up-sepia.png")
+    img.hero-image(src="http://intothemiddlekingdom.files.wordpress.com/2011/10/market-noodles.jpg", width="1200px")
+    img.guide-zoom(src="/images/open-in-hands.png")
     div.store-top-content(ng-class="{cart:invoice.items.length}")
-      h1 30 WORDS GUIDE DETAILS
-      ul.features-list
-        li Focused: 900 words & phrases
-        li Lightweight: Weighs 4 ounces
-        li Portable: Fits snugly in any pocket
-        li Durable: Waterproof & Tear-proof
-        li 100% recyclable
 
   div(ng-controller="ShoppingCartCtrl")
     div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")

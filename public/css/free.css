@@ -20,25 +20,14 @@
 }
 
 .guide-zoom {
-  bottom: 0;
-  left: 0;
+  bottom: -10px;
+  left: 14%;
+  opacity: .95;
   position: absolute;
   width: 340px;
-}
-
-.hero-box h2 {
-  bottom: 20px;
-  color: white;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 50px;
-  position: absolute;
-  width: 52%;
-  margin-left: 20%;
-  background-color: rgba(0,0,0,.1);
-  border-radius: 8px;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
-  padding: 14px 28px;
+  transform:rotate(3deg);
+  -ms-transform:rotate(3deg);
+  -webkit-transform:rotate(3deg);
 }
 
 .free-intro {
@@ -46,12 +35,21 @@
   width: 60%;
 }
 
+.free-intro h2 {
+  color: #333;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+
+
 .free-intro p {
   color: #333;
-  font-size: 26px;
+  font-size: 2em;
   font-weight: 300;
   margin-bottom: 30px;
-  line-height: 35px;
+  line-height: 1.4em;
 }
 
 .free-intro span {
@@ -70,8 +68,7 @@
 
 .write-here-message {
   color: #FC5E59;
-  font-size: 26px;
-  font-weight: 100;
+  font-size: 2em;
   margin: 50px 0 0 0;
 }
 

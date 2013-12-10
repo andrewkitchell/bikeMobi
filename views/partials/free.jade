@@ -2,23 +2,31 @@
  .modal-dialog
   .modal-header Excellent!
   .modal-body Now, add a bit of info, and we'll ship you a guide.
+    div Name:
+     input(type="text", ng-model="formData.name")
+    div E-mail:
+     input(type="email", ng-model="formData.email")
+    div Mailing Address:
+     input(type="text", ng-model="formData.address")
 
+    div Language:
+     select(ng-model="formData.guide", ng-init="guide.language = options[0]", ng-options="guide.language for guide in guides")
+      option(val="Choose", placeholder="Lanugage") Choose a language
+
+    button.free-button(data-toggle="modal", data-target="#myModal", ng-click="submitForm()") Submit
 
 div.hero-box
- img.hero-image(src="/images/road_crop_no_arrow.png")
- img.guide-zoom(src="/images/guide-close-up-sepia.png")
-
- h2 Every student should be able to say 'Hello' to those they meet
+ img.hero-image(src="/images/mongolia.png")
+ img.guide-zoom(src="/images/open-in-hands.png")
 
 div
  div.free-intro
-  p 30 WORDS began as a tool to help our students interact with anyone they met.
-  p We still support the idea that all student travelers should be able to talk to those they meet.
-  p If you are a student and need a language guide for your travels, we want to help!
-  p Simply write a short story (below) aboutwhat might happen if you say "hello" to people you meet.
-  p We'll ship you any guide you choose.
+  h2 Helping Students say 'Hello'
+  p If you are a student and need a language guide for your travels, we want to help.
+  p Write a short story about what might happen if you say "hello" to people you meet.
+  p In return for your efforts, we'll ship you any guide you like.
 
-  div.write-here-message Write your story here:
+  div.write-here-message Craft your story here:
   textarea.story-box(placeholder="eg. We had never tasted anything quite like it.")
 
  button.free-button(data-toggle="modal", data-target="#myModal") My Masterpiece is Finished!

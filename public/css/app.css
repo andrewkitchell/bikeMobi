@@ -84,16 +84,17 @@ body {
 .nav-list ul li a {
   color: #777;
   font-family: 'Open Sans';
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   padding: 4px 0;
   text-transform: uppercase;
 }
 
-.nav-list ul li a:hover,
-.nav-list ul li a.active {
-  text-decoration: underline;
-}
+  .nav-list ul li a:hover,
+  .nav-list ul li a.active {
+    border-bottom: 1px solid #999;
+    text-decoration: none;
+  }
 
 .store-link {
   background-color: #FF0033;
@@ -167,13 +168,18 @@ body {
 }
 
 .footer-list a li span {
-  color: #ddd;
+  color: #bbb;
   font-size: 12px;
   margin-right: 8px;
   vertical-align: top;
   position: relative;
   top: 1px;
 }
+
+  .footer-list a li span:hover {
+    color: #999;
+    text-decoration: underline;
+  }
 
 .footer-list i:hover {
   color: #777;
@@ -256,4 +262,8 @@ body {
 }
 .euspanish-button {
   background-color: #F39263 !important;
+}
+
+.modal.fade {
+  top: -100%;
 }

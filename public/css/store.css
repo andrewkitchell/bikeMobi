@@ -1,5 +1,10 @@
+.nav-list ul li a {
+	/*color: white;*/
+}
+
 .hero-container {
-	min-height: 590px;
+	min-height: 400px;
+	overflow: hidden;
 	position: relative;
 }
 
@@ -18,6 +23,14 @@
   position: relative;
   height: 500px;
   width: 100%;
+}
+
+.guide-zoom {
+	opacity: 1;
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	width: 380px;
 }
 
 .store-top-content {

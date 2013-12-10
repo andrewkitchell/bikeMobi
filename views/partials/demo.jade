@@ -4,15 +4,16 @@ block css
 .hero-container
  img.hero-image(src="/images/road_crop_no_arrow.png")
  ul#slides
-  li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }")
+  li.slide(ng-repeat="quote in quotes", ng-class="{ active : quote.isActive }", ng-cloak)
    h2.quote(ng-cloak) "{{ quote.quote }}"
-   h5.quote-author(ng-cloak) - {{ quote.author }}
- img.guide-zoom(src="/images/open-in-hands.png")
+   h4.quote-author(ng-cloak) {{ quote.author }}
+   h5.quote-title(ng-cloak) {{ quote.title }}
+ img.guide-zoom(src="/images/guide-close-up-sepia.png")
 
 
 div.below-the-fold
-  div.below-title
-    h1 Language Guides that help you <br> 'Start the Conversation'
+  //- div.below-title
+  //-   h1 A Language Tool for Adventurous Travelers
 
   .feature-box
     div.feature-box-write-up
@@ -39,7 +40,7 @@ div.below-the-fold
         | explore rainy jungles, and engage in conversations lively enough to spill a coffee. <br><br>
         | Therefore, we made 30 WORDS waterproof & tear resistant, so you'll always feel safe slipping
         | your guide into your pocket, swimsuit, or jacket.
-    img(src='/images/cover-and-guide.png')
+    img.ultra-durable-image(src='/images/cover-and-guide.png')
 
   .feature-box
     img.image-left.afforable-image(src='/images/open-in-hands.png')

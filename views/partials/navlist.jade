@@ -4,11 +4,11 @@ nav.nav-list
 
  ul
   li
-   a(href='/') Home
+   a(href='/', ng-class="{active:isActive('/')}") Home
   li
    a(href='demo', ng-class="{active:isActive('/demo')}") Design & Reviews
   li
-   a(href='free', ng-class="{active:isActive('/free')}") Students
+   a(href='free', ng-class="{active:isActive('/free')}") For Students
   li
    a(href='blog', ng-class="{active:isActive('/blog')}", ng-click="reloadCtrl()") Blog
   li

@@ -59,6 +59,18 @@ exports.purchase = function(req, res) {
 
 
 exports.submit_story = function(req, res) {
-  console.log('in submit story')
-  console.log(req);
+  console.log('in submit story');
+  var name = req.body.name;
+  var address = req.body.address;
+  var email = req.body.email;
+  var language = req.body.guide.language;
+
+  stripe.charges.create({
+    amount: amount,
+    currency: "usd",
+    card: stripeToken, // obtained with Stripe.js
+    description: purchased_guides
+  }).then(function(res) {
+    console.log('yes, this works:: ' + res);
+  });
 }

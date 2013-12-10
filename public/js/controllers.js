@@ -24,18 +24,18 @@ angular.module('myApp.controllers', []).
       $route.reload();
     };
 
-    $scope.isActive = function(route) {
-        return route === $location.path();
-    };
-
   }]).
 
 
 
-  controller('NavController', function($scope, $location, $route) {
+  controller('NavCtrl', function($scope, $location, $route) {
 
     $scope.reloadCtrl = function(){
       $route.reload();
+    };
+
+    $scope.isActive = function(route) {
+        return route === $location.path();
     };
 
   }).
@@ -75,6 +75,23 @@ angular.module('myApp.controllers', []).
     error(function (data, status, headers, config) {
       $scope.name = 'Error!';
     });
+
+    $scope.formData = {};
+
+    $scope.submitForm = function() {
+
+      alert('yes');
+
+      $http.post('/submit-story', $scope.formData)
+        .success(function(data) {
+          $('input').val('');
+          console.log('YESSSSS');
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
+      };
 
   }]).
 
@@ -196,23 +213,28 @@ angular.module('myApp.controllers', []).
     $scope.quotes = [
       {
         'quote': 'I have purchased many language guides like this. This one is the best simple, short guide I have seen.',
-        'author': 'Paul K, Greensburg, PA'
+        'author': 'Paul K',
+        'title': 'Customer, Greensburg, PA'
       },
       {
         'quote': "Best proof that good things come in small packages.",
-        'author': "Paul Eisenberg, Fox News"
+        'author': "Paul Eisenberg",
+        'title': 'Fox News: Top Travel Products'
       },
       {
         'quote': "30 WORDS ultra-minimalist approach is too smart & well thought out to leave at home.",
-        'author': "Mike Richards, Vagabondish.com"
+        'author': "Mike Richards",
+        'title': 'Vagabondish.com Product Review'
       },
       {
         'quote': 'A must have.',
-        'author': 'Judy F, Olathe, KS'
+        'author': 'Judy F',
+        'title': 'Customer, Olathe, KS'
       },
       {
         'quote': "Incredibly durable.  Get them wet, try to rip it, and you've still got a perfectly usable language tool!",
-        'author': 'Anne M, Atlanta, GA'
+        'author': 'Anne M',
+        'title': 'Customer, Atlanta, GA'
       }
     ];
 
@@ -255,39 +277,39 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
     $scope.images = [
       {
         'src': "/images/guideCovers/german.png",
-        'hello': 'Guten Tag!',
+        'hello': 'Guten Tag',
         'transliteration': 'GOOT·en tahk',
         'language': 'German'
       },
       {
-        'src': "/images/guideCovers/french.png",
-        'hello': 'Bonjour!',
-        'transliteration': 'bohN·Zoor',
-        'language': 'French'
-      },
-      {
         'src': "/images/guideCovers/mandarin.png",
-        'hello': '你好!',
+        'hello': 'Nee Hao',
         'transliteration': 'Nĕe·Hăo!',
         'language': 'Mandarin'
       },
       {
-        'src': "/images/guideCovers/arabic.png",
-        'hello': 'أهلا و سهلاً',
-        'transliteration': 'AH·lahn wa SAH·lahn',
-        'language': 'Arabic'
+        'src': "/images/guideCovers/saspanish.png",
+        'hello': 'Holá',
+        'transliteration': 'Oh·la',
+        'language': 'Mandarin'
       },
       {
         'src': "/images/guideCovers/italian.png",
-        'hello': 'Buon giorno!',
+        'hello': 'Buon giorno',
         'transliteration': 'bwon JOR·no',
         'language': 'Italian'
       },
       {
         'src': "/images/guideCovers/brazilian.png",
-        'hello': 'Oi / Olá!',
+        'hello': 'Olá',
         'transliteration': 'oy / OH·la',
         'language': 'Brazilian'
+      },
+      {
+        'src': "/images/guideCovers/french.png",
+        'hello': 'Bonjour',
+        'transliteration': 'bohN·Zoor',
+        'language': 'French'
       }
     ];
 
@@ -321,9 +343,6 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
   }).
 
 
-  controller('AboutCtrl', function ($scope) {
-    $scope.name = 'About';
-  }).
   controller('BlogCtrl', function ($scope) {
     $scope.name = 'Blog';
   });
