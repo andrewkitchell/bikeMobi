@@ -22,7 +22,7 @@ exports.guides = function (req, res) {
       French: {
         css_style: 'french',
         language: 'French',
-        price: '$9.95',
+        price: '$8.95',
         description: 'The farmer appreciated your enthusiasm when you asked about his harvest.  <br><br>In fact, he appreciated your enthusiasm so much he put you right to work. After a strenuous day of watering, weeding and hauling dirt you certainly earned your invitation to a home-cooked meal.  <br><br>So, enjoy your dinner, catch your breath, and use the more than 800 words and phrases in your 30 WORDS to toast your new friend.',
         image: '/images/cover_french.png'
       },

@@ -274,37 +274,37 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
 
     $scope.images = [
       {
-        'src': "/images/guideCovers/german.png",
+        'src': "/images/cover_german.png",
         'hello': 'Guten Tag',
         'transliteration': 'GOOT·en tahk',
         'language': 'German'
       },
       {
-        'src': "/images/guideCovers/mandarin.png",
+        'src': "/images/cover_mandarin.png",
         'hello': 'Nee Hao',
         'transliteration': 'Nĕe·Hăo!',
         'language': 'Mandarin'
       },
       {
-        'src': "/images/guideCovers/saspanish.png",
+        'src': "/images/cover_saspanish.png",
         'hello': 'Holá',
         'transliteration': 'Oh·la',
         'language': 'Mandarin'
       },
       {
-        'src': "/images/guideCovers/italian.png",
+        'src': "/images/cover_italian.png",
         'hello': 'Buon giorno',
         'transliteration': 'bwon JOR·no',
         'language': 'Italian'
       },
       {
-        'src': "/images/guideCovers/brazilian.png",
+        'src': "/images/cover_brazilian.png",
         'hello': 'Olá',
         'transliteration': 'oy / OH·la',
         'language': 'Brazilian'
       },
       {
-        'src': "/images/guideCovers/french.png",
+        'src': "/images/cover_french.png",
         'hello': 'Bonjour',
         'transliteration': 'bohN·Zoor',
         'language': 'French'

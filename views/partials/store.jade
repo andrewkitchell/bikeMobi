@@ -41,7 +41,7 @@ div
         div.guide-in-cart-box(ng-repeat='item in invoice.items')
           div.guide-in-cart
             i.fa.fa-times-circle-o(ng-click="removeItem($index)")
-            img(ng-src='{{item.guide.image}}', width='80px')
+            img(src='{{item.guide.image}}', width='80px')
             div.guide-in-cart-details
               p {{ item.guide.language }}
               td
