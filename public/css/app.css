@@ -150,7 +150,7 @@ body {
 }
 
 .footer-list {
-  text-align: right;
+  text-align: center;
 }
 
 .footer-list a {
@@ -163,14 +163,14 @@ body {
 }
 
 .footer-list a li i {
-  font-size: 18px;
-  margin-right: 5px;
+  font-size: 22px;
+  margin-right: 7px;
 }
 
 .footer-list a li span {
   color: #bbb;
-  font-size: 12px;
-  margin-right: 8px;
+  font-size: 14px;
+  margin-right: 22px;
   vertical-align: top;
   position: relative;
   top: 1px;

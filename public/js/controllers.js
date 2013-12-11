@@ -19,11 +19,6 @@ angular.module('myApp.controllers', []).
       $scope.name = 'Error!';
     });
 
-    $scope.reloadCtrl = function(){
-      alert('reloading...');
-      $route.reload();
-    };
-
   }]).
 
 
@@ -61,37 +56,40 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('FreeCtrl', ['$scope', '$http', function($scope, $http) {
+  controller('FreeCtrl', ['$scope', '$http', '$anchorScroll', function($scope, $http, $anchorScroll) {
 
-    $http({
-      method: 'GET',
-      url: '/api/guides'
-    }).
-
-    success(function (data, status, headers, config) {
-      $scope.guides = data.guides;
-    }).
-
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
+    $scope.guides = [
+      'Arabic',
+      'Brazilian Portuguese',
+      'French',
+      'German',
+      'Hebrew',
+      'Italian',
+      'Mandarin',
+      'Spanish: South American',
+      'Spanish: European'
+    ];
 
     $scope.formData = {};
 
     $scope.submitForm = function() {
 
-      alert('yes');
-
       $http.post('/submit-story', $scope.formData)
         .success(function(data) {
-          $('input').val('');
-          console.log('YESSSSS');
           console.log(data);
-        })
-        .error(function(data) {
+        }).
+
+        error(function(data) {
           console.log('Error: ' + data);
         });
       };
+
+    $scope.showThanks = false;
+
+    $scope.thankYou = function() {
+      $scope.showThanks = true;
+      $anchorScroll();
+    };
 
   }]).
 

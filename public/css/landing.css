@@ -220,7 +220,7 @@
 /* ENDORSEMENTS */
 
 .as-seen-in {
-  margin: 5px 0 60px 15%;
+  margin: 5px 0 20px 15%;
   text-align: center;
   width: 70%;
 }
@@ -331,6 +331,13 @@
   margin: 30px 0;
 }
 
+.our-mission .signature {
+  font-family: 'Rouge Script';
+  font-size: 36px;
+  color: #444;
+  margin-bottom: 40px;
+}
+
 .our-mission ul {
   font-weight: 300px;
 }
@@ -345,26 +352,57 @@
   color: #666;
 }
 
+.second-landing-box {
+  margin-top: 100px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.second-photo {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.guide-photo {
+  bottom: 0;
+  left: 15%;
+  position: absolute;
+  width: 380px;
+  z-index: 2;
+  margin-bottom: -50px;
+}
+
+.start-the-conversation {
+  color: white;
+  font-family: 'Rouge Script';
+  font-size: 54px;
+  font-weight: 500;
+  padding: 0 10%;
+  position: absolute;
+  text-align: right;
+  text-shadow: 1px 1px 10px black;
+  top: 30px;
+  width: 100%;
+}
 
 .button-box {
-  margin: 80px auto 60px;
   text-align: center;
+  width: 100%;
 }
 
-.button-box a {
-  border-radius: 4px;
-  margin: 0 20px;
-  padding: 14px 50px;
-  font-size: 22px;
-  background-color: #BD9AC8;
-  color: white;
-  font-weight: 300;
-}
-
-.button-box a:last-of-type {
+.big-button {
   background-color: #60C2DD;
+  display: inline-block;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 10px 0 50px;
+  padding: 28px 82px;
+  border-radius: 8px;
 }
 
-.button-box a:hover {
-    box-shadow: 1px 1px 4pc rgba(0,0,0,.1);
-}
+  .big-button:hover {
+    background-color: #40B2CD;
+    color: white;
+  }

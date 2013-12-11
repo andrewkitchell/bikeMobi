@@ -30,6 +30,12 @@
   -webkit-transform:rotate(3deg);
 }
 
+.free-intro .thanks {
+  background-color: #60C2DD;
+  color: white;
+  padding: 4px 18px;
+}
+
 .free-intro {
   margin: 40px 20% 20px;
   width: 60%;
@@ -139,5 +145,48 @@
     background-color: #DA5E59;
   }
 
+.free-button.submit-button {
+  display: block;
+  margin: 0;
+}
 
+.modal-dialog {
+  padding: 25px;
+}
 
+.modal-header {
+  border-bottom: 1px solid #eee;
+  font-size: 22px;
+  padding: 20px 15px;
+}
+
+.modal-body p {
+  margin-bottom: 10px;
+}
+
+.modal-body input {
+  background-color: #eee;
+  border: none;
+  border-radius: 0;
+  display: block;
+  margin-top: 4px;
+  height: 32px;
+  width: 80%;
+}
+
+.fa-times-circle-o {
+  color: #ccc;
+  font-size: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.choose {
+  margin-right: 5px;
+}
+
+.modal ::-webkit-input-placeholder { font-size: 12px; }
+.modal :-moz-placeholder { font-size: 12px;  }
+.modal ::-moz-placeholder { font-size: 12px;  }
+.modal :-ms-input-placeholder {   font-size: 12px;
