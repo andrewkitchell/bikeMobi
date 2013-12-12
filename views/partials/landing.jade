@@ -19,7 +19,7 @@ block css
           //- p.hello-transliteration {{image.transliteration}}
 
 ul.languages-in-print
-  p 9 Languages in print
+  p 9 Language Guides in print
   li(ng-repeat="guide in guides")
     a(href="/store/{{guide.langauge}}")
       i.fa.fa-dot-circle-o
@@ -38,8 +38,9 @@ div.our-mission
   p.signature - Erin, Will & Andrew
 
 div.second-landing-box
-  h1.start-the-conversation Wherever you roam ...
-  h2.start-the-conversation Start the Conversation!
+  div.start-the-conversation
+    h2 Wherever you roam ...
+    h2 Start the Conversation!
   img.second-photo(src="/images/chinese-market-2.jpg")
   img.guide-photo(src="/images/open-in-hands.png")
 
@@ -57,4 +58,4 @@ ul.as-seen-in
     a.logo-item.goBackpacking-logo(href="")
 
 .button-box
-  a.big-button(href="/demo") Learn More
+  a.big-button(href="/demo") Why 30 WORDS?

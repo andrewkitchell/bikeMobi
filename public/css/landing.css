@@ -366,7 +366,7 @@
 
 .guide-photo {
   bottom: 0;
-  left: 15%;
+  left: 24%;
   position: absolute;
   width: 380px;
   z-index: 2;
@@ -374,16 +374,23 @@
 }
 
 .start-the-conversation {
-  color: white;
-  font-family: 'Rouge Script';
-  font-size: 54px;
-  font-weight: 500;
   padding: 0 10%;
   position: absolute;
-  text-align: right;
-  text-shadow: 1px 1px 10px black;
-  top: 30px;
+  top: 50px;
   width: 100%;
+}
+
+.start-the-conversation h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 4px;
+  text-shadow: 1px 1px 10px black;
+}
+
+.start-the-conversation h2:last-of-type {
+  font-family: 'Rouge Script';
+  font-size: 54px;
 }
 
 .button-box {
