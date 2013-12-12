@@ -95,20 +95,22 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('StoreCtrl', ['$scope', '$http', function($scope, $http) {
+  controller('StoreCtrl', ['$scope', 'guideFactory', function($scope, guideFactory) {
 
-    $http({
-      method: 'GET',
-      url: '/api/guides'
-    }).
+    $scope.guides = guideFactory.guides;
 
-    success(function (data, status, headers, config) {
-      $scope.guides = data.guides;
-    }).
+    // $http({
+    //   method: 'GET',
+    //   url: '/api/guides'
+    // }).
 
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
+    // success(function (data, status, headers, config) {
+    //   $scope.guides = data.guides;
+    // }).
+
+    // error(function (data, status, headers, config) {
+    //   $scope.name = 'Error!';
+    // });
 
   }]).
 
