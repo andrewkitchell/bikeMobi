@@ -122,7 +122,7 @@ angular.module('myApp.controllers', []).
 
     $scope.images = [
       {
-        'src': "/images/garage.jpg",
+        'src': "/images/garage_bw.jpg",
         'headline': 'Whether your bike needs dusting ...',
         'blurb': "(We'll come to your place and bring your bike back to life)"
 
@@ -143,7 +143,7 @@ angular.module('myApp.controllers', []).
         'blurb': "(Not too much we can do.  But, we'll give you a ride home)"
       },
       {
-        'src': "/images/stolen.jpg",
+        'src': "/images/mechanic.jpg",
         'headline': 'We got your back',
         'blurb': "(We go out of our way to )"
       }
