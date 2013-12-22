@@ -2,7 +2,7 @@
 
 * {
   font-family: 'Open Sans', 'Open Sans Condensed', sans-serif;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   transition: 0.2s ease;
   -moz-box-sizing: border-box;
@@ -125,7 +125,7 @@ body {
   .store-link.active {
     box-shadow: 1px 1px 6px rgba(0,0,0,.2);
     color: white;
-    padding: 74px 20px 19px;
+    padding: 94px 20px 19px;
     text-shadow: 0 0 4px rgba(0,0,0,.2);
   }
 

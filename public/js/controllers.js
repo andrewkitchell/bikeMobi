@@ -4,25 +4,6 @@
 angular.module('myApp.controllers', []).
 
 
-  controller('AppCtrl', ['$scope', '$http', '$route', '$rootScope', '$location', function($scope, $http, $route, $rootScope, $location) {
-
-    // cssInjector.setSinglePageMode(true);
-
-    $http({
-      method: 'GET',
-      url: '/api/name'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.name = data.name;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
-
-  }]).
-
-
-
   controller('NavCtrl', function($scope, $location, $route) {
 
     $scope.reloadCtrl = function(){
@@ -56,82 +37,12 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('FreeCtrl', ['$scope', '$http', '$anchorScroll', function($scope, $http, $anchorScroll) {
-
-    $scope.guides = [
-      'Arabic',
-      'Brazilian Portuguese',
-      'French',
-      'German',
-      'Hebrew',
-      'Italian',
-      'Mandarin',
-      'Spanish: South American',
-      'Spanish: European'
-    ];
-
-    $scope.formData = {};
-
-    $scope.submitForm = function() {
-
-      $http.post('/submit-story', $scope.formData)
-        .success(function(data) {
-          console.log(data);
-        }).
-
-        error(function(data) {
-          console.log('Error: ' + data);
-        });
-      };
-
-    $scope.showThanks = false;
-
-    $scope.thankYou = function() {
-      $scope.showThanks = true;
-      $anchorScroll();
-    };
-
-  }]).
-
-
-
   controller('StoreCtrl', ['$scope', 'guideFactory', function($scope, guideFactory) {
 
     $scope.guides = guideFactory.guides;
 
-    // $http({
-    //   method: 'GET',
-    //   url: '/api/guides'
-    // }).
-
-    // success(function (data, status, headers, config) {
-    //   $scope.guides = data.guides;
-    // }).
-
-    // error(function (data, status, headers, config) {
-    //   $scope.name = 'Error!';
-    // });
-
   }]).
 
-
-
-  controller('GuideCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-
-    $http({
-      method: 'GET',
-      url: '/api/guides/'
-    }).
-
-    success(function (data, status, headers, config) {
-      $scope.guide = data.guides[$routeParams.guide];
-    }).
-
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!';
-    });
-
-  }]).
 
 
   controller('ShoppingCartCtrl', ['$scope', '$http', function($scope, $http) {
@@ -139,6 +50,18 @@ angular.module('myApp.controllers', []).
     $scope.invoice = {
         items: []
     };
+
+    $scope.description = function(items) {
+
+        var description = '';
+
+        angular.forEach($scope.invoice.items, function(item) {
+            description += item.qty + " " + item.guide.language + "; ";
+        });
+
+        return description;
+    };
+
 
     $scope.addItem = function(guide) {
 
@@ -193,123 +116,36 @@ angular.module('myApp.controllers', []).
 
 
 
-  controller('ModalDemoCtrl', ['$scope', '$modal', '$log', function ($scope, $modal, $log) {
-
-    $scope.open = function () {
-
-      var modalInstance = $modal.open({
-        controller: ModalInstanceCtrl
-      });
-
-    };
-  }]).
-
-
-
-  controller('DemoCtrl', ['$scope', '$timeout', '$route', '$location', function ( $scope, $timeout, $route, $location ) {
-
-    $scope.slideCurrent = 0;
-
-    $scope.quotes = [
-      {
-        'quote': 'I have purchased many language guides like this. This one is the best simple, short guide I have seen.',
-        'author': 'Paul K',
-        'title': 'Customer, Greensburg, PA'
-      },
-      {
-        'quote': "Best proof that good things come in small packages.",
-        'author': "Paul Eisenberg",
-        'title': 'Fox News: Top Travel Products'
-      },
-      {
-        'quote': "30 WORDS ultra-minimalist approach is too smart & well thought out to leave at home.",
-        'author': "Mike Richards",
-        'title': 'Vagabondish.com Product Review'
-      },
-      {
-        'quote': 'A must have.',
-        'author': 'Judy F',
-        'title': 'Customer, Olathe, KS'
-      },
-      {
-        'quote': "Incredibly durable.  Get them wet, try to rip it, and you've still got a perfectly usable language tool!",
-        'author': 'Anne M',
-        'title': 'Customer, Atlanta, GA'
-      }
-    ];
-
-    $scope.advanceSlide = function() {
-            // Method 1
-            // Use a classname to highlight the current active slide
-            if ( angular.isDefined( $scope.quotes ) && $scope.quotes.length )
-                    $scope.makeActiveSlide( $scope.slideCurrent + 1 );
-
-            /*
-            // Method 2
-            // Just flush the array elements around
-            if ( angular.isDefined( $scope.images ) )
-                    $scope.images.push( $scope.images.shift() );
-            */
-
-            $timeout( $scope.advanceSlide, 4000 );
-    };
-
-    // Advance slides
-    $timeout( $scope.advanceSlide );
-
-    $scope.makeActiveSlide = function( index ) {
-            // Inactivate the previous slide
-            delete $scope.quotes[ $scope.slideCurrent ].isActive;
-            // Select the next slide
-            $scope.slideCurrent = ( index ) % $scope.quotes.length;
-            // Activate the next slide
-            $scope.quotes[ $scope.slideCurrent ].isActive = true;
-    };
-
-  }]).
-
-
-
-controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $location ) {
+  controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $location ) {
 
     $scope.slideCurrent = 0;
 
     $scope.images = [
       {
-        'src': "/images/cover_german.png",
-        'hello': 'Guten Tag',
-        'transliteration': 'GOOT·en tahk',
-        'language': 'German'
+        'src': "/images/garage.jpg",
+        'headline': 'Whether your bike needs dusting ...',
+        'blurb': "(We'll come to your place and bring your bike back to life)"
+
       },
       {
-        'src': "/images/cover_mandarin.png",
-        'hello': 'Nee Hao',
-        'transliteration': 'Nĕe·Hăo!',
-        'language': 'Mandarin'
+        'src': "/images/country.jpg",
+        'headline': 'Or your adventure ended abruptly ...',
+        'blurb': "We're always down for an adventure.  We'll come lend a hand if we can."
       },
       {
-        'src': "/images/cover_saspanish.png",
-        'hello': 'Holá',
-        'transliteration': 'Oh·la',
-        'language': 'Mandarin'
+        'src': "/images/friend.jpg",
+        'headline': 'Or a friend deserves a nice present ...',
+        'blurb': "Time to get your riding partner back in the saddle!"
       },
       {
-        'src': "/images/cover_italian.png",
-        'hello': 'Buon giorno',
-        'transliteration': 'bwon JOR·no',
-        'language': 'Italian'
+        'src': "/images/stolen.jpg",
+        'headline': 'Or some bastard stole your bike ...',
+        'blurb': "(Not too much we can do.  But, we'll give you a ride home)"
       },
       {
-        'src': "/images/cover_brazilian.png",
-        'hello': 'Olá',
-        'transliteration': 'oy / OH·la',
-        'language': 'Brazilian'
-      },
-      {
-        'src': "/images/cover_french.png",
-        'hello': 'Bonjour',
-        'transliteration': 'bohN·Zoor',
-        'language': 'French'
+        'src': "/images/stolen.jpg",
+        'headline': 'We got your back',
+        'blurb': "(We go out of our way to )"
       }
     ];
 
@@ -340,25 +176,4 @@ controller('LandingSlideshowCtrl', function ( $scope, $timeout, $route, $locatio
       // Activate the next slide
       $scope.images[ $scope.slideCurrent ].isActive = true;
     };
-  }).
-
-
-  controller('BlogCtrl', function ($scope) {
-    $scope.name = 'Blog';
   });
-
-  // var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-
-  //   $scope.items = items;
-  //   $scope.selected = {
-  //     item: $scope.items[0]
-  //   };
-
-  //   $scope.ok = function () {
-  //     $modalInstance.close($scope.selected.item);
-  //   };
-
-  //   $scope.cancel = function () {
-  //     $modalInstance.dismiss('cancel');
-  //   };
-// };

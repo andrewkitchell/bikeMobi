@@ -5,9 +5,10 @@ html(ng-app="myApp", ng-cloak)
   head
     meta(charset='utf8')
     base(href='/')
-    title 30WORDS
+    title Bike
     link(rel="shortcut icon", href="/images/favicon.png")
     script(src='http://code.jquery.com/jquery-2.0.3.js')
+    script(type="text/javascript", src="https://js.stripe.com/v2/")
     script(src="https://checkout.stripe.com/checkout.js")
     link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css')
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
@@ -27,11 +28,10 @@ html(ng-app="myApp", ng-cloak)
      ul.footer-list
       a
        li
-        span hello@30words.com
-        i.fa.fa-envelope
-      a
+        span help@bikedoctor.com
+      a(href="www.facebook.com/bikedoctor")
        li
         i.fa.fa-facebook-square
-      a
+      a(href="www.twitter.com/bikedoctor")
        li
         i.fa.fa-twitter-square

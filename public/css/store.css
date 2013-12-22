@@ -3,7 +3,7 @@
 }
 
 .hero-container {
-	min-height: 500px;
+	min-height: 300px;
 	overflow: hidden;
 	position: relative;
 }
@@ -25,13 +25,23 @@
   width: 100%;
 }
 
+.store-title {
+	width: 100%;
+	text-align: center;
+	z-index: 4;
+	color: white;
+	position: absolute;
+	bottom: 0;
+}
+
 .guide-zoom {
-	left: 8%;
+	left: 0%;
 	opacity: 1;
 	transform: rotate(0deg);
 	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
-	width: 320px;
+	width: 240px;
+	z-index: 0;
 }
 
 .store-top-content {
@@ -249,8 +259,8 @@
 
 .shipping-details {
 	border-bottom: 1px solid #eee;
-	color: #555;
-	font-weight: 400;
+	color: #333;
+	font-weight: 600;
 	margin-left: 13%;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
@@ -259,7 +269,7 @@
 }
 
 .shipping-details p {
-	margin: 5px 0;
+	margin: 2px 0;
 }
 
 .shipping-details a {
@@ -421,4 +431,33 @@ button.add-to-cart {
 
 .vietnamese-button {
 	background-color: #9AD741;
+}
+
+
+
+
+
+
+
+.individual-guide-main {
+	margin-top: 180px;
+}
+
+.guide-container {
+	margin: 0 auto;
+	min-height: 500px;
+	text-align: center;
+	width: 80%;
+}
+
+.guide-container .guide-cover {
+	width: 100%;
+}
+
+.guide-container .guide-text {
+	text-align: left;
+}
+
+.guide-container .guide-title {
+	font-size: 3em;
 }

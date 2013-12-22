@@ -1,38 +1,44 @@
 div
   div.hero-container
-    img.hero-image(src="/images/chinese-market-2.jpg")
-    img.guide-zoom(src="/images/open-in-hands.png")
-    div.store-top-content(ng-class="{cart:invoice.items.length}")
+    img.hero-image(src="/images/road_crop_no_arrow.png")
 
   div(ng-controller="ShoppingCartCtrl")
-    div#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-head="{{description}}")
 
+    form#shopping-cart(ng-show="invoice.items.length", value="{{totalCostForStripe()}}", data-description="{{description()}}")
       div.total
         img.total-logo(src="/images/logo_30words_store.png")
         p(ng-pluralize, count="totalNumberInCart()", when="{'0': 'No guides in your cart', 'one': '1 guide in your cart', 'other': '{} guides in your cart'}")
         p Your total is {{ totalCostForLocal() | currency:"$" }}
 
-        button#customButton.stripe-button-el
+        button#customButton.stripe-button-el()
           span Place Order
         span.bottom-braid
 
         script.
           // this is the custom Stripe form, added by me
           var handler = StripeCheckout.configure({
-          key: 'pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9',
-          image: '/images/stripe-logo.png',
-          token: function(token, args) {
-            // Use the token to create the charge with a server-side script.
+            key: 'pk_LzkJmgBXMs1mjt0WBrlEzrowncsB9',
+            image: '/images/stripe-logo.png',
+            token: function(response) {
+              // data attr from shopping cart, describing purchase
+              var description = $('#shopping-cart').attr('data-description')
+              // adds description of guides purchased to response object
+              response.description = description
+              // posts response object to index.js (our Node api)
+              $.post( "/purchase", response, function( data ) {
+                  console.log("data " + data);
+              });
             }
           });
+
           document.getElementById('customButton').addEventListener('click', function(e) {
-          // Open Checkout with further options
             var amount = $('#shopping-cart').attr("value");
             var description = $('#shopping-cart').attr('data-head')
             handler.open({
               name: '30 WORDS',
               description: description,
-              amount: amount
+              amount: amount,
+              billingAddress: true
             });
             //- e.preventDefault();
           })
@@ -51,8 +57,8 @@ div
     div.all-guides(ng-class="{'thin-store': invoice.items.length}")
 
       div.shipping-details
-        p Guides ship the day after you order, and cost $10.95 each (shipping included).
-        p Have any questions? Bulk Orders? <a href="mailto:hello@30words.com" target="_blank">hello@30words.com</a>
+        p Is your riding partner is need of a fix?
+        p Cool.  We'll get them back in the Saddle.
 
       div.guide-box(ng-repeat='guide in guides | filter: searchparam', ng-animate="'animate'")
         div.cover-box
@@ -61,7 +67,7 @@ div
         div.guide-text
           a.guide-title(href="/store/{{guide.language}}") {{guide.language}}
           button.store-button.add-to-cart(ng-click="addItem(guide)", class="{{ guide.css_style }}-button") Add to Cart
-          div.guide-description(ng-bind-html="guide.description")
+          div.guide-description(ng-bind-html="guide.description|truncate:140" )
 
       div.guide-box
         div.cover-box

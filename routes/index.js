@@ -30,10 +30,13 @@ exports.store = function(req, res){
 
 
 
+
 exports.purchase = function(req, res) {
-  var stripeToken = req.body.stripeToken;
+
+  console.log(req.body);
+  var stripeToken = req.body.id;
   var amount = req.body.amount;
-  var purchased_guides = req.body.purchased_guides;
+  var purchased_guides = req.body.description;
 
   stripe.charges.create({
     amount: amount,
@@ -41,23 +44,28 @@ exports.purchase = function(req, res) {
     card: stripeToken, // obtained with Stripe.js
     description: purchased_guides
   }).then(function(res) {
-    console.log('yes, this works:: ' + res);
+    console.log(res.body);
   }, function(err) {
       switch (err.type) {
         case 'StripeCardError':
           // A declined card error
+          console.log('Card Error:: ' + err);
           break;
         case 'StripeInvalidRequestError':
           // Invalid parameters were supplied to Stripe's API
+          console.log('Parameters Error:: ' + err);
           break;
         case 'StripeAPIError':
           // An error occurred internally with Stripe's API
+          console.log('API Error:: ' + err);
           break;
         case 'StripeConnectionError':
           // Some kind of error occurred during the HTTPS communication
+          console.log('Connection Error:: ' + err);
           break;
         case 'StripeAuthenticationError':
           // You probably used an incorrect API key
+          console.log('Auth Error:: ' + err);
           break;
       }
     });

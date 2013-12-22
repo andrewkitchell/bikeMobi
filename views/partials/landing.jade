@@ -2,60 +2,19 @@ block css
  link(rel='stylesheet', href='/css/landing.css')
 
 .hero-container
- img.hero-image(src="/images/road_crop_no_arrow.png")
- div.hero-content
-  h1.title Meet 30 WORDS
-  h5.subtitle And Say 'Hello' to Adventure
+
+  div.contact-box
+    form.contact-form
+      input(placeholder="enter your number")
+      input(placeholder="enter your address")
+      p Or call us: 415-989-2783
 
   ul#slides(ng-controller="LandingSlideshowCtrl")
-    li.slide
-      a(href="/demo")
-        img.guide-zoom(src="/images/open-in-hands.png", ng-cloak)
     li.slide(ng-repeat="image in images", ng-class="{ active : image.isActive }")
-      a(href="/demo")
-        img.demo-image(src="{{ image.src }}", class="{{image.language}}", ng-cloak)
-        div.hello-box
-          p.hello {{image.hello}}!
-          //- p.hello-transliteration {{image.transliteration}}
-
-ul.languages-in-print
-  p 9 Language Guides in print
-  li(ng-repeat="guide in guides")
-    a(href="/store/{{guide.langauge}}")
-      i.fa.fa-dot-circle-o
-      | {{ guide.language }}
-
-div.our-mission
-  div.our-mission-header
-    h1 Langauge Guides: Re-Imagined
-    h3 Portable <i class="fa fa-circle"></i> Focused <i class="fa fa-circle"></i> Durable
-  p We designed 30 WORDS to help travelers connect to people they meet.
-  p Speaking even a few words of the local language gives you intimate access to
-    | cultures and leads to unforgettable experiences.
-  p When traveling with 30 WORDS, expect doors to open, and your adventures to top
-    | anything you imagined before you left home.
-  p Start the Conversation!
-  p.signature - Erin, Will & Andrew
-
-div.second-landing-box
-  div.start-the-conversation
-    h2 Wherever you roam ...
-    h2 Start the Conversation!
-  img.second-photo(src="/images/chinese-market-2.jpg")
-  img.guide-photo(src="/images/open-in-hands.png")
-
-ul.as-seen-in
-  div.as-seen-in-title As seen in:
-  li
-    a.logo-item.practical-logo(href="")
-  li
-    a.logo-item.foxnews-logo(href="")
-  li
-    a.logo-item.nytimes-logo(href="")
-  li
-    a.logo-item.vagabonish-logo(href="")
-  li
-    a.logo-item.goBackpacking-logo(href="")
+      img(ng-src="{{image.src}}")
+      div.content-box
+        h2.subtitle {{image.headline}}
+        h4.blurb {{image.blurb}}
 
 .button-box
-  a.big-button(href="/demo") Why 30 WORDS?
+  a.big-button(href="/demo") Call us!

@@ -56,7 +56,7 @@ angular.module('myApp.services', [])
                 css_style: 'mandarin',
                 language: 'Mandarin',
                 price: '$9.95',
-                description: 'When you stopped to ask the price of the morning catch, you did not expect to be invited to join the fisherman out on the river.  <br><br>However, a friendly exchange at the local market earned you an invitation to fish the Yangtze. After an exciting day on the river you pause to reflect on two new lessons:  <br><br>Landing a sturgeon on a narrow raft is a sizable challenge; and you need to find clothing as waterproof and durable as your 30 WORDS.',
+                description: 'When you stopped to ask the price of the morning catch, you did not expect to be invited to join the fisherman out on the river.  However, a friendly exchange at the local market earned you an invitation to fish the Yangtze. After an exciting day on the river you pause to reflect on two new lessons:  <br><br>Landing a sturgeon on a narrow raft is a sizable challenge; and you need to find clothing as waterproof and durable as your 30 WORDS.',
                 image: '/images/cover_mandarin.png'
               },
               spanish_EU: {
